@@ -1,4 +1,4 @@
-import WorkManagementModal from "@/components/WorkManagementModal";
+import WorkManagementModal from "@/components/software/WorkManagementModal";
 import { workManagements } from "@/constants/constants";
 
 export default async function WorkManagement({ params }: { params: Promise<{ id: string }> }) {

@@ -588,3 +588,152 @@ export const searchSuggestionList = [
     route: "/jira-it-service-requests",
   }
 ];
+
+export const workflowSidebarLinks = [
+  {
+    title: "Your work",
+    ref: "your-work",
+    icon: "/svg/recent.svg",
+  },
+  {
+    title: "Recent",
+    icon: "/svg/recent.svg",
+    submenu: true,
+  },
+  {
+    title: "Starred",
+    icon: "/svg/recent.svg",
+    submenu: true,
+  },
+  {
+    title: "Apps",
+    icon: "/svg/recent.svg",
+    subnav: [
+      {
+        title: "Explore more apps",
+        route: "explore-more-apps",
+      },
+    ],
+  },
+  {
+    title: "Projects",
+    icon: "/svg/recent.svg",
+  },
+  {
+    title: "Filters",
+    icon: "/svg/recent.svg",
+    subnav: [
+      {
+        icon: "/svg/recent.svg",
+        title: "Search issues",
+        route: "search-issues",
+      },
+      {
+        title: "Default filters",
+        subnav: [
+          {
+            title: "My open issues",
+          },
+        ],
+      },
+    ],
+  },
+];
+
+export const sidebarDropdown = [
+  {
+    mainTitle: 'Recent',
+    itemIcon: '/svg/recent.svg',
+    itemRef: '/',
+    itemTitle: 'Сервіс залізничної компанії',
+    submenu: true,
+  },
+  {
+    mainTitle: 'Recommended',
+    itemIcon: '/svg/recent.svg',
+    itemRef: '/',
+    itemTitle: 'Go-to-market sample',
+  },
+];
+
+export const linksWithAdditionalInfo = [
+  { icon: '/svg/recent.svg', title: 'Recent' },
+  { icon: '/svg/star.svg', title: 'Starred' },
+];
+
+export const recentSidebarLinks = [
+  {
+    icon: '/svg/star.svg',
+    title: 'Remove from starred'
+  },
+  {
+    icon: '/svg/user.svg',
+    title: 'Add people'
+  },
+  {
+    icon: '/svg/settings.svg',
+    title: 'Project settings'
+  },
+  {
+    trash: true,
+    icon: '/svg/trash.svg',
+    title: 'Delete projects'
+  },
+];
+
+// export const history: SidebarExtraSubmenu[] = [
+//   {
+//     icon: '/svg/recent.svg',
+//     title: 'SCRUM board',
+//     route: '/scrum-board',
+//     time: '33 minutes ago'
+//   },
+//   {
+//     icon: '/svg/recent.svg',
+//     route: '/service-of-rails-company',
+//     title: 'Сервіс залізничної компанії',
+//     time: '36 minutes ago'
+//   },
+// ]
+
+// export const starred: SidebarExtraSubmenu[] = [];
+
+export const sidebarExtraItems: SidebarExtraSubmenuType[] = [
+  {
+    represent: {
+      title: 'Recent',
+      icon: '/svg/recent.svg',
+    },
+    submenu: [
+      {
+        icon: '/svg/recent.svg',
+        title: 'SCRUM board',
+        route: '/scrum-board',
+        time: '33 minutes ago'
+      },
+      {
+        icon: '/svg/recent.svg',
+        route: '/service-of-rails-company',
+        title: 'Сервіс залізничної компанії',
+        time: '36 minutes ago'
+      },
+    ],
+    empty: {
+      icon: '',
+      title: 'You haven’t history yet',
+      description: 'Navigate through site and you will see your recent activity.'
+    }
+  },
+  {
+    represent: {
+      title: 'Starred',
+      icon: '/svg/star.svg',
+    },
+    submenu: [],
+    empty: {
+      icon: '/svg/starred.svg',
+      title: 'You haven’t starred anything yet',
+      description: 'Mark items that are important to you with a star to quickly access them. You’ll see those items here.'
+    }
+  }
+]

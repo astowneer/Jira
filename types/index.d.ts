@@ -72,3 +72,126 @@ declare interface WorkManagementModalProps {
   posibilities: Possibility[];
   imageMainUrl: string;
 };
+
+// WORKFLOW
+
+declare type ItemAditional = {
+  icon: string;
+  title: string;
+}
+
+declare interface SidebarAditionProps {
+  item: ItemAditional;
+  className?: string;
+}
+
+declare type SidebarDropdownItem = {
+  mainTitle: string;
+  itemIcon: string;
+  itemRef: string;
+  itemTitle: string;
+  submenu?: boolean
+}
+
+declare interface SidebarDropdownProps {
+  item: SidebarDropdownItem;
+}
+
+declare type SidebarSubmenuItem = {
+  icon: string;
+  title: string;
+}
+
+declare interface SidebarSubmenuProps {
+  item: SidebarSubmenuItem, 
+  index: number, 
+  isOpen: boolean;
+  submenuIndex: number,
+  sidebarWidth: number,
+  // setSubmenuIndex: React.Dispatch<React.SetStateAction<number>>
+  setClickedOutside: (value: boolean) => void,
+  setSubmenuIndex: (index: number) => void
+  // onClick: () => void;
+}
+
+declare type SidebarSubmenuIndexItem = {
+  title: string;
+}
+
+declare interface SidebarSubmenuIndexProps {
+  item: SidebarSubmenuIndexItem, 
+  submenuIndex: number, 
+  sidebarWidth: number, 
+  setSubmenuIndex: (index: number) => void
+}
+
+declare type SubnavLink = {
+  icon: string,
+  title: string,
+  route: string
+}
+
+declare type Link = {
+  title: string,
+  ref: string,
+  icon: string,
+  subnav: SubnavLink[]
+}
+
+declare interface SidebarWindowProps {
+  link: Link,
+  isOpen: boolean,
+  onClick: () => void
+}
+
+// declare type SidebarExtraSubmenu = {
+//   icon: string,
+//   title: string,
+//   route: string,
+//   time: string,
+// }
+
+
+// declare type Starred = {
+//   icon: string;
+//   title: string;
+//   route: string;
+//   time: string;
+// }
+
+declare type SidbarSubmenu = {
+  icon: string,
+  title: string,
+  route: string,
+  time: string,
+}
+
+declare type SidebarExtraSubmenuType = {
+  represent: {
+    title: string,
+    icon: string,
+  },
+  submenu: SidbarSubmenu[],
+  empty: {
+    icon: string,
+    title: string,
+    description: string
+  }
+}
+
+declare type SidebarExtraType = {
+  icon: string, 
+  title: string
+}
+
+declare interface SidebarExtraProps {
+  item: SidebarExtraType;
+  index: number;
+  onClick: (index: number) => void;
+}
+
+declare interface SidebarExtraSubmenuProps {
+  item: SidebarExtraSubmenuType;
+  sidebarWidth: number, setSubmenuIndex: (index: number) => void;
+  setClickedOutside: React.Dispatch<React.SetStateAction<boolean>>;
+}

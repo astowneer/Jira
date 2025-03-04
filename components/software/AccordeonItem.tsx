@@ -8,11 +8,8 @@ const AccordeonItem = ({
   onClick 
 }: AccordeonItemProps) => {
   return (
-    <div>
-      <div 
-        className="px-8 py-3 select-none"
-        onClick={onClick}
-      >
+    <section>
+      <div className="px-8 py-3 select-none" onClick={onClick}>
         <div className="mb-4 flex flex-col gap-1">
           <div className="flex gap-3">
             <div className="bg-gray-300 w-[3px]">
@@ -21,9 +18,7 @@ const AccordeonItem = ({
             <h3 className="text-2xl font-bold">{title}</h3>
           </div>
 
-          {isOpen && (
-            <p className="text-md">{description}</p>
-          )}
+          {isOpen && <p className="text-md">{description}</p>}
         </div>
         
         {isOpen && (
@@ -38,7 +33,7 @@ const AccordeonItem = ({
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

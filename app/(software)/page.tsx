@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { featureCards, integraionCards, newFeatureCards, sponsorsCards, workManagements } from "@/constants/constants";
-import FeatureCard from "@/components/FeatureCard";
-import NewFeatureCard from "@/components/NewFeatureCard";
-import SponsorBrandCard from "@/components/SponsorBrandCard";
-import WorkManagementCard from "@/components/WorkManagementCard";
-import Accordeon from "@/components/Accordeon";
-import IntegrationCard from "@/components/IntegrationCard";
+import FeatureCard from "@/components/software/FeatureCard";
+import NewFeatureCard from "@/components/software/NewFeatureCard";
+import SponsorBrandCard from "@/components/software/SponsorBrandCard";
+import WorkManagementCard from "@/components/software/WorkManagementCard";
+import Accordeon from "@/components/software/Accordeon";
+import IntegrationCard from "@/components/software/IntegrationCard";
 
 export default async function Home() {
   return (
@@ -71,7 +71,7 @@ export default async function Home() {
         </section>
         
         <section className="flex overflow-x-hidden w-full">
-          <div className="flex gap-5 overflow-x-auto w-full 2xl:justify-center px-2">
+          <div className="flex gap-5 py-6 overflow-x-auto w-full 2xl:justify-center px-2">
             {workManagements.map((card, index) => (
               <WorkManagementCard 
                 key={index}
@@ -102,7 +102,14 @@ export default async function Home() {
 
       <article className="bg-blue-600 text-white flex flex-col items-center">
         <section className="max-w-5xl w-full flex flex-col gap-6 items-center py-16 px-5">
-          <div className="size-12 bg-white" />
+          {/* <div className="size-12 bg-white" /> */}
+          <Image
+            src="/images/ai.png"
+            width={126}
+            height={120}
+            alt="ai logo"
+            className="size-14"
+          />
           <h3 className="text-2xl lg:text-4xl font-bold text-center">Your next move, suggested by AI</h3>
           <p className="text-lg text-center">Atlassian Intelligence takes your big ideas and automatically suggests the tasks to help get it done.</p>
           <button className="text-xl border-2 font-semibold border-white py-2 px-6 rounded-md hover:bg-blue-700/50">Explore Atlassian Intelligence</button>
@@ -170,13 +177,13 @@ export default async function Home() {
 
       <article className="flex 2xl:flex-row justify-center items-center w-full py-16 bg-gray-100">
         <div className="max-w-5xl w-full max-2xl:px-10 flex flex-col 2xl:flex-row items-center">
-          <section className="max-w-5xl w-full flex flex-col 2xl:items-start items-center gap-5 py-5">
+          <section className="max-w-5xl w-full flex flex-col 2xl:items-start items-center gap-8 py-5">
             <h2 className="text-3xl font-bold text-center 2xl:text-left 2xl:text-5xl">Meets teams where they work</h2>
             <p className="text-lg text-center 2xl:text-left">If your team uses it, we integrate with it. Easily add your favorite tools from the Atlassian Marketplace, keeping Jira as your central source of truth.</p>
             <button className="border-2 border-black w-fit px-8 py-3 rounded-3xl text-lg 2xl:text-2xl hover:bg-gray-200 duration-300">See all integrations</button>
           </section>
 
-          <section className="flex flex-wrap justify-center items-center gap-5 max-2xl:max-w-[400px] 2xl:w-full px-2">
+          <section className="flex flex-wrap justify-center items-center gap-5 max-2xl:max-w-[400px] 2xl:w-full p-2">
             {integraionCards.map((card) => (
               <IntegrationCard 
                 key={card.imageAlt}
@@ -200,8 +207,8 @@ export default async function Home() {
               alt="star"
             />
           </div>
-          <div className="flex flex-col gap-10 pb-14 pl-1 pr-10 2xl:max-w-[350px]">
-            <h2 className="text-2xl lg:text-4xl font-bold text-center 2xl:text-left">For teams big & small</h2>
+          <div className="flex flex-col max-lg:gap-5 gap-10 pb-14 pl-1 pr-10 2xl:max-w-[350px]">
+            <h2 className="text-3xl lg:text-5xl font-bold text-center 2xl:text-left">For teams big & small</h2>
             <p className="text-md px-12 lg:px-0 lg:text-2xl text-center 2xl:text-left">Hear from start-ups & large enterprises that prefer Atlassian</p>
             <Link 
               href="/"
@@ -211,7 +218,7 @@ export default async function Home() {
             </Link>
           </div>
 
-          <div className="relative text-black bg-white lg:max-w-[776px] max-w-[320px] w-full rounded-bl-3xl rounded-tr-3xl flex flex-col lg:flex-row">
+          <div className="relative text-black bg-white lg:max-w-[776px] max-w-[350px] w-full py-4 rounded-bl-3xl rounded-tr-3xl flex flex-col lg:flex-row">
             <div className="relative min-w-[245px] min-h-[228px]">
               <Image
                 src="/images/testimonial-roblox.webp"
@@ -222,10 +229,10 @@ export default async function Home() {
               />
             </div>
           
-            <div className="px-4 lg:px-2 pb-6 lg:pb-3 rounded-tr-3xl relative py-5">
-              <p className="text-lg pb-2">“Before, our team saw Atlassian as individual tools...Now, [features & integrations] like Jira macros & Smart Links have really been pivotal in collaboration, productivity, & discoverability.”</p>
+            <div className="px-4 lg:px-2 pb-6 lg:pb-3 rounded-tr-3xl max-lg:px-6 relative py-5">
+              <p className="lg:text-2xl text-xl pb-4">“Before, our team saw Atlassian as individual tools...Now, [features & integrations] like Jira macros & Smart Links have really been pivotal in collaboration, productivity, & discoverability.”</p>
               <h4 className="font-bold text-xl border-t-2 border-gray-500 w-fit pt-1">Joe Cotant</h4>
-              <p className="text-lg">Senior Technical Program Manager, Roblox</p>
+              <p className="lg:text-2xl text-xl">Senior Technical Program Manager, Roblox</p>
 
               <Image
                 src="/images/quote.webp"
@@ -249,7 +256,7 @@ export default async function Home() {
         <section className="max-w-5xl px-8 w-full pt-24 flex flex-col lg:flex-row items-center gap-5">
           <div className="flex flex-col items-center lg:items-start gap-[40px]">
             <p className="max-w-[765px] text-4xl text-center lg:text-left font-extrabold text-white">No matter what you're trying to dream up, Jira helps you get it done</p>
-            <button className="bg-yellow-500 hover:bg-yellow-300 duration-300 text-black text-xl font-semibold w-fit px-10 py-2 rounded-md">Get Jira free</button>
+            <button className="bg-yellow-500 hover:bg-yellow-300 duration-300 text-bas text-black font-semibold w-fit px-10 py-2 rounded-md">Get Jira free</button>
           </div>
         
           <div className="relative">

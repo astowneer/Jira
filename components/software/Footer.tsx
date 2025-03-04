@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import FooterLink from "./FooterLink";
 import Link from "next/link";
 import { Globe } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -13,7 +14,13 @@ const Footer = () => {
             {link.main ? (
               <div className="h-full flex flex-col">
                 <div className="h-[58px] block">
-                  <div className="w-[20px] h-[20px] bg-blue-600" />
+                  <Image 
+                    src="/svg/atlassian.svg"
+                    width={3840}
+                    height={2160}
+                    alt="atlasian logo"
+                    className="w-[30px] h-[30px]"
+                  />
                 </div>
                 
                 <nav className="">
