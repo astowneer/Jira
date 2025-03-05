@@ -12,8 +12,8 @@ const Search = () => {
 
   return (
     <section className="relative w-full">
-      <div className="h-full w-[20px] absolute top-0 left-[2px] flex items-center">
-        <MagnifyingGlassIcon width={24} height={24} className="focus text-gray-400" />
+      <div className="h-full w-[20px] absolute top-0 left-[6px] flex items-center">
+        <MagnifyingGlassIcon width={24} height={24} className="focus text-gray-400 w-[24px] h-[24px]" />
       </div>
 
       <div className='w-full'>
@@ -26,7 +26,7 @@ const Search = () => {
         />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

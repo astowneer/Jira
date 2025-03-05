@@ -11,10 +11,12 @@ export default function SoftwareLayout({
   return (
     <main>
       <Navbar />
+
       {children}
       <div className="relative">
         {modal}
       </div>
+      
       <Footer />
     </main>
   );

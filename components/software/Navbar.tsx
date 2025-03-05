@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { ChevronDownIcon, MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/16/solid";
+import { ChevronDownIcon, MagnifyingGlassIcon } from "@heroicons/react/16/solid";
 import { navigationLinks } from "@/constants/constants";
 import { Fragment, useState } from "react";
-import { cn } from "@/lib/utils";
 import NavbarDropdownLink from "./NavbarDropdown";
 import Link from "next/link";
 import Search from "./Search";
+import SignIn from "./SignIn";
 
 const Navbar = () => {
   const [searchSelected, setSearchSelected] = useState(false);
@@ -66,7 +66,6 @@ const Navbar = () => {
 
                         {hoveredNavLink && (
                           <>
-                            {/* <div className="fixed left-0 right-0 top-0 bottom-0 bg-gray-200 opacity-90 -z-20" /> */}
                             <div className="absolute min-w-max p-10 -translate-x-1/2 bg-white border-[1px] border-gray-100 z-50 rounded-2xl shadow-lg grid grid-cols-3 gap-10"> 
                               {link.dropdown.map((link) => (
                                 <NavbarDropdownLink 
@@ -110,12 +109,7 @@ const Navbar = () => {
                     <span className="border-l-[1px] border-gray-400 h-5 mx-5" />
                   </div>
 
-                  <Link 
-                    href="/sign-in"
-                    className="text-blue-700 text-sm hover:bg-gray-200 px-3 py-2"
-                  >
-                    Sign in
-                  </Link>
+                  <SignIn />
                 </div>
               </div>
             </>
