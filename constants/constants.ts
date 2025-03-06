@@ -643,14 +643,14 @@ export const workflowSidebarLinks = [
 export const sidebarDropdown = [
   {
     mainTitle: 'Recent',
-    itemIcon: '/svg/recent.svg',
+    itemIcon: '/svg/project.svg',
     itemRef: '/',
     itemTitle: 'Сервіс залізничної компанії',
     submenu: true,
   },
   {
     mainTitle: 'Recommended',
-    itemIcon: '/svg/recent.svg',
+    itemIcon: '/svg/project.svg',
     itemRef: '/',
     itemTitle: 'Go-to-market sample',
   },
@@ -737,3 +737,81 @@ export const sidebarExtraItems: SidebarExtraSubmenuType[] = [
     }
   }
 ]
+
+export const users = [
+  {
+    color: 'red',
+    fullName: 'Drobidko Vladyslav Anatoliyovich'
+  },
+  {
+    color: 'blue',
+    fullName: 'Stephan Bandera'
+  },
+  {
+    color: 'yellow',
+    fullName: 'Lumen'
+  },
+];
+
+export const timelineDropdownItems = [
+  {
+    title: 'Epic',
+    className: 'max-sm:hidden',
+    items: [
+      { id: 'vision', title: 'Vision/Scope, business requirements' },
+      { id: 'scope', title: 'Make user stories' },
+      { id: 'backlog', title: 'Write backlog' }
+    ]
+  },
+  {
+    title: 'Type',
+    className: 'max-lg:hidden',
+    items: [
+      { id: 'review', title: 'Review', icon: '/svg/review.svg', filter: "invert(55%) sepia(95%) saturate(5000%) hue-rotate(15deg) brightness(100%) contrast(90%)" },
+      { id: 'story', title: 'Story', icon: '/svg/bookmark.svg', filter: "invert(40%) sepia(90%) saturate(3000%) hue-rotate(100deg) brightness(90%) contrast(100%)" },
+      { id: 'task', title: 'Task', icon: '/svg/checkbox.svg', filter: "invert(58%) sepia(71%) saturate(5949%) hue-rotate(205deg) brightness(103%) contrast(93%)" }
+    ]
+  },
+  {
+    title: 'Status Category',
+    className: 'max-xl:hidden',
+    items: [
+      { id: 'todo', title: 'To Do' },
+      { id: 'in-progress', title: 'In Progres' },
+      { id: 'done', title: 'Done' }
+    ]
+  },
+]
+
+export const timelineActionItems = [
+  {
+    icon: "/svg/upload.svg",
+    tooltipText: "Export",
+    tooltipSide: "bottom"
+  },
+  {
+    icon: "/svg/adjusment.svg",
+    tooltipText: "View Settings",
+    tooltipSide: "bottom"
+  },
+  {
+    icon: "/svg/more.svg",
+    tooltipText: "More actions",
+    tooltipSide: "bottom"
+  },
+]
+
+export const navbarItems = [
+  { 
+    icon: '/svg/bell.svg', 
+    title: "notification" 
+  }, 
+  { 
+    icon: '/svg/help.svg', 
+    title: "help" 
+  }, 
+  { 
+    icon: '/svg/settings.svg', 
+    title: "settings" 
+  }
+];

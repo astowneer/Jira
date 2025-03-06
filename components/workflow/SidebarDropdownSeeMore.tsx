@@ -4,9 +4,9 @@ import { Trash } from 'lucide-react';
 import { recentSidebarLinks } from '@/constants/constants';
 import SidebarSectionRepresent from './SidebarSectionRepresent';
 
-const SidebarDropdownSeeMore = () => {
+const SidebarDropdownSeeMore = ({ className }: { className?: string }) => {
   return (
-    <section className='absolute left-44 min-w-[240px] flex flex-col space-y-1 text-sm p-4 shadow-lg bg-white border-gray-200 z-10'>
+    <section className={`absolute left-44 min-w-[240px] flex flex-col space-y-1 text-sm p-4 shadow-lg bg-white border-gray-200 z-10 ${className}`}>
       {recentSidebarLinks.map((item) => (
         <Fragment key={item.title}>
           {item.trash ? (

@@ -195,3 +195,80 @@ declare interface SidebarExtraSubmenuProps {
   sidebarWidth: number, setSubmenuIndex: (index: number) => void;
   setClickedOutside: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
+declare type ActionTooltipProps = {
+  icon: string;
+  tooltipText: string;
+  tooltipSide?: 'top' | 'bottom';
+};
+
+declare type TimelineDropdownItem = {
+  id: string;
+  title: string;
+  icon?: string;
+  filter?: string;
+}
+
+declare interface TimelineDropdownProps {
+  title: string;
+  items: TimelineDropdownItem[];
+}
+
+declare type TimelineDropdownItem = {
+  id: string;
+  title: string;
+  icon?: string;
+  filter?: string;
+};
+
+declare type TimelineDropdownCheckboxProps = {
+  item: TimelineDropdownItem;
+  checked: boolean;
+  onChange: () => void;
+};
+
+declare type UserTooltip = {
+  color: string;
+  fullName: string;
+}
+
+declare interface UserTooltipProps {
+  user?: UserTooltip;
+  isDefault?: boolean;
+}
+
+// Tabs
+
+declare type TabLink = {
+  icon: string,
+  route: string,
+  title: string
+}
+
+declare interface TabLinkProps {
+  link: TabLink, 
+  index: number, 
+  tabMoreSelectedIndex: number, 
+  isSelected: boolean, 
+  setTabMoreOpenIndex: React.Dispatch<SetStateAction<number>>
+}
+
+declare type Tab = {
+  icon: string;
+  route: string;
+  title: string;
+}
+
+declare interface TabMoreProps {
+  tab: Tab, 
+  tabs: Tab[], 
+  setTabs: React.Dispatch<SetStateAction<Tab[]>>
+}
+
+declare type User = {
+  id: string;
+  role: "user" | "admin";
+  firstName: string;
+  lastName: string;
+  email: string;
+}

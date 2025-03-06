@@ -14,7 +14,7 @@ const SidebarExtraSubmenu = ({ item, sidebarWidth, setSubmenuIndex, setClickedOu
     <section 
       ref={submenuRef} 
       style={{ left: sidebarWidth - 80 + 'px' }} 
-      className='absolute top-0 text-sm flex z-10 flex-col space-y-4 w-[384px] p-5 shadow-md border-[1px] bg-white border-gray-300'
+      className='absolute z-10 top-0 text-sm flex flex-col space-y-4 w-[384px] p-5 shadow-md border-[1px] bg-white border-gray-300'
     >   
       {item.submenu.length > 0 ? (
         <div className="flex flex-col space-y-3">
