@@ -8,7 +8,7 @@ type NavbarItem = {
 
 const NavbarItem = ({ item }: { item: NavbarItem }) => {
   return (
-    <div className="hover:bg-gray-200/70 px-3 py-3 duration-300">
+    <div className="hover:bg-gray-200/70 px-3 py-3 duration-300 cursor-pointer">
       <Image src={item.icon} width={20} height={20} alt={item.title} />
     </div>
   );

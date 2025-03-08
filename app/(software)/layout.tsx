@@ -13,6 +13,7 @@ export default function SoftwareLayout({
       <Navbar />
 
       {children}
+      
       <div className="relative">
         {modal}
       </div>

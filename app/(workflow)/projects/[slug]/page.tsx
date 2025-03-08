@@ -6,8 +6,6 @@ export default async function Project({
   const { slug } = await params;
   
   return (
-    <div>
-      Project {slug}
-    </div>
-  )
+    <div>Project {slug}</div>
+  );
 }

@@ -815,3 +815,134 @@ export const navbarItems = [
     title: "settings" 
   }
 ];
+
+
+export const tabsLinks = [
+  { 
+    icon: '/svg/globe.svg', 
+    title: 'Summary', 
+    route: '/projects'
+  }, 
+  {
+    icon: '/svg/recent.svg', 
+    title: 'Timeline', 
+    route: '/timeline'
+  }, 
+  { 
+    icon: '/svg/backlog.svg', 
+    title: 'Backlog', 
+    route: '/backlog'
+  },
+  { 
+    icon: '/svg/stack.svg', 
+    title: 'Board', 
+    route: '/board'
+  },
+  { 
+    icon: '/svg/calendar.svg', 
+    title: 'Calendar', 
+    route: '/calendar'
+  },
+  { 
+    icon: '/svg/trending.svg', 
+    title: 'Reports', 
+    route: '/reports'
+  },
+  { 
+    icon: '/svg/aim.svg', 
+    title: 'Goals', 
+    route: '/goals'
+  },
+];
+
+export const projectsInfo = [
+  {
+    icon: '/svg/checkbox.svg',
+    title: '0 Completed',
+    timeDescription: 'in the last 7 days'
+  },
+  {
+    icon: '/svg/adjusment.svg',
+    title: '0 Updated',
+    timeDescription: 'in the last 7 days'
+  },
+  {
+    icon: '/svg/squares.svg',
+    title: '0 Created',
+    timeDescription: 'in the last 7 days'
+  },
+  {
+    icon: '/svg/calendar.svg',
+    title: '0 due soon',
+    timeDescription: 'in the last 7 days'
+  },
+];
+
+export const overviewList = [
+  {
+    color: 'blue',
+    title: 'Future Spints'
+  },
+  {
+    color: 'orange',
+    title: 'To Do'
+  },
+  {
+    color: 'red',
+    title: 'Awaits Review'
+  },
+  {
+    color: 'green',
+    title: 'In Progress'
+  },
+  {
+    color: 'blue',
+    title: 'Done'
+  },
+  {
+    color: 'yellow',
+    title: 'Cancelled'
+  },
+]
+
+export const teamWorkloadLinks = [
+  {
+    title: 'Unassigned',
+    ref: '/projects',
+    icon: '/svg/user.svg',
+    filter: ''
+  },
+]
+
+export const typesOfWorkLinks = [
+  {
+    title: 'Epic',
+    ref: '/epic',
+    icon: '/svg/bolt.svg',
+    filter: 'invert(20%) sepia(90%) saturate(5000%) hue-rotate(250deg) brightness(100%) contrast(90%)'
+  },
+  {
+    title: 'Task',
+    ref: '/task',
+    icon: '/svg/checkbox.svg',
+    filter: "invert(58%) sepia(71%) saturate(5949%) hue-rotate(205deg) brightness(103%) contrast(93%)"
+  },
+  {
+    title: 'Bug',
+    ref: '/bug',
+    icon: '/svg/bug.svg',
+    filter: "invert(20%) sepia(90%) saturate(5000%) hue-rotate(0deg) brightness(100%) contrast(90%)"
+  },
+  {
+    title: 'Review',
+    ref: '/review',
+    icon: '/svg/review.svg',
+    filter: "invert(55%) sepia(95%) saturate(5000%) hue-rotate(15deg) brightness(100%) contrast(90%)"
+  },
+  {
+    title: 'Story',
+    ref: '/story',
+    icon: '/svg/bookmark.svg',
+    filter: "invert(40%) sepia(90%) saturate(3000%) hue-rotate(100deg) brightness(90%) contrast(100%)"
+  },
+]

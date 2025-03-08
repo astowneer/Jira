@@ -3,5 +3,5 @@ export default async function WorkManagement() {
     <div>
       WorkManagement
     </div>
-  )
+  );
 }

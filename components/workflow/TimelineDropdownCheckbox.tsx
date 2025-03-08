@@ -13,14 +13,23 @@ const TimelineDropdownCheckbox = ({
     >
       <input
         id={item.id}
-        type="checkbox"
         checked={checked}
         onChange={onChange}
+        type="checkbox"
         className="cursor-pointer"
       />
-      <div className="flex gap-1">
-        {item.icon && <Image src={item.icon} width={18} height={18} style={{ filter: item.filter }} alt={item.title} />}
-        <span className="truncate">{item.title}</span>
+
+      <div className="flex gap-1 overflow-hidden">
+        {item.icon && 
+          <Image 
+            src={item.icon} 
+            width={18} 
+            height={18} 
+            style={{ filter: item.filter }} 
+            alt={item.title} 
+          />
+        }
+        <div className="truncate text-xs text-ellipsis whitespace-nowrap">{item.title}</div>
       </div>
     </label>
   );

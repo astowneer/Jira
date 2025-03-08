@@ -5,7 +5,5 @@ export default async function Solutions({
 }) {
   const { slug } = await params;
 
-  return (
-    <div>Solutions {slug}</div>
-  )
+  return <div>Solutions {slug}</div>;
 }

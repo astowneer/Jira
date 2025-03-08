@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-const UserTooltip = ({ user, isDefault }: UserTooltipProps) => {
+const UserTooltip = ({ user, isDefault, className }: UserTooltipProps) => {
   const userColorClass = user ? 'bg-' + user.color + '-500' : '';
   const userColorIcon = isDefault ?  'grayscale opacity-50' : 'invert';
   const outlineClass = isDefault
@@ -9,15 +9,12 @@ const UserTooltip = ({ user, isDefault }: UserTooltipProps) => {
     : `outline outline-white outline-[3px]`;
 
   return (
-    <div
-      className={`relative size-8 rounded-full flex justify-center items-center ${outlineClass} -mr-1 group hover:z-50 ${userColorClass}`}
-    >
+    <section className={`relative size-8 rounded-full flex justify-center items-center ${outlineClass} -mr-1 group ${userColorClass} ${className} hover:z-50`}>
       <Image src='/svg/user-bold.svg' width={22} height={22} alt='user' className={userColorIcon} />
-      
       <p className="absolute rounded-sm w-fit top-9 text-[10px] text-white whitespace-nowrap p-1 bg-neutral-800 hidden group-hover:block">
         {isDefault ? 'Unassigned' : user?.fullName}
       </p>
-    </div>
+    </section>
   );
 };
 

@@ -86,7 +86,7 @@ declare interface SidebarAditionProps {
 }
 
 declare type SidebarDropdownItem = {
-  mainTitle: string;
+  mainTitle?: string;
   itemIcon: string;
   itemRef: string;
   itemTitle: string;
@@ -235,6 +235,7 @@ declare type UserTooltip = {
 declare interface UserTooltipProps {
   user?: UserTooltip;
   isDefault?: boolean;
+  className?: string;
 }
 
 // Tabs
@@ -245,12 +246,20 @@ declare type TabLink = {
   title: string
 }
 
-declare interface TabLinkProps {
+declare interface TabItemProps {
   link: TabLink, 
+  tabCount: number;
+  // tabs: TabLink[],
+  // setTabs: React.Dispatch<SetStateAction<TabLink[]>>,
   index: number, 
   tabMoreSelectedIndex: number, 
   isSelected: boolean, 
   setTabMoreOpenIndex: React.Dispatch<SetStateAction<number>>
+  // link, 
+  // index, 
+  // tabCount,
+  // isSelected, 
+  // setTabMoreOpenIndex
 }
 
 declare type Tab = {

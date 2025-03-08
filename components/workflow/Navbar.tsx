@@ -3,20 +3,23 @@
 import Image from "next/image"
 import Link from "next/link"
 import Search from "./Search"
+import UserProfile from "./UserProfile"
+import useOutsideClick from "@/hooks/useOutsideClick"
+import UserContextMenu from "./UserContextMenu"
+import NavbarItem from "./NavbarItem"
 import { Plus } from "lucide-react"
-import useOutsideClick from "@/hooks/useOutsideClick";
 import { useState, useEffect } from "react";
 import { getCurrentUser } from "@/lib/currentUser"
-import UserProfile from "./UserProfile"
-import { useSidebar } from "./SidebarContext"
-import UserLogged from "./UserLogged"
-import NavbarItem from "./NavbarItem"
+import { useSidebar } from "./sidebar/SidebarContext"
 import { navbarItems } from "@/constants/constants"
 
 const Navbar = () => {
   const [showProfile, setShowProfile] = useState(false);
   const [loading, setLoading] = useState(false);
   const [fullUser, setFullUser] = useState<User | null>(null);
+
+  const { toggleSidebar } = useSidebar();
+
   const dropdownRef = useOutsideClick<HTMLDivElement>(() => {
     setShowProfile(false);
   });
@@ -31,19 +34,13 @@ const Navbar = () => {
     fetchUser()
   }, []);
 
-  const { toggleSidebar } = useSidebar();
-
   if (loading) return <div>Loading...</div>;
 
   return (
-    <header className="sticky top-0 flex justify-between h-[63px] px-5 border-b-2 bg-white z-50">
-      <section className="flex gap-3 items-center">
-        <button className="hover:bg-gray-200/70 px-3 py-3 duration-300" onClick={toggleSidebar}>
+    <header className="sticky top-0 flex justify-between gap-3 max-md:gap-1 h-[63px] px-5 border-b-2 bg-white z-50">
+      <section className="flex gap-3 max-md:gap-1 items-center">
+        <button className="hover:bg-gray-200/70 px-3 py-3 duration-300 cursor-pointer max-lg:hidden" onClick={toggleSidebar}>
           <Image src="/svg/burger.svg" width={18} height={18} alt="burger" />
-        </button>
-
-        <button className="hover:bg-gray-200/70 px-3 py-3 duration-300">
-          <Image src="/svg/squares.svg" width={20} height={20} alt="your apps" />
         </button>
       
         <Link href="/" className="w-[63px] h-auto flex flex-shrink-0">
@@ -51,7 +48,7 @@ const Navbar = () => {
         </Link>
       </section>
       
-      <section className="flex items-center justify-center flex-1">
+      <section className="flex items-center justify-center flex-1 max-sm:hidden">
         <div className="max-w-[615px] w-full h-full flex gap-2 items-center py-2">
           <Search />
 
@@ -62,18 +59,15 @@ const Navbar = () => {
         </div>
       </section>
 
-      <section className="flex items-center gap-5">
-        {navbarItems.map((item, index) => (
+      <section className="flex items-center gap-3 max-md:gap-1 flex-shrink-0">
+        {navbarItems.map((item, index) => 
           <NavbarItem key={index} item={item} />
-        ))}
+        )}
 
-        {fullUser != null ? (
-          <section className="relative select-none" ref={dropdownRef}>
-            <UserProfile setShowProfile={setShowProfile} />
-            {showProfile && <UserLogged fullUser={fullUser} />}
-          </section>
-        ): <UserProfile setShowProfile={setShowProfile} /> }
-       
+        <div ref={fullUser ? dropdownRef : undefined} className="relative select-none">
+          <UserProfile setShowProfile={setShowProfile} />
+          {fullUser && showProfile && <UserContextMenu fullUser={fullUser} />}
+        </div>
       </section>
     </header>
   );

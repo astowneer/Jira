@@ -3,11 +3,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import SidebarDropdownSeeMore from './SidebarDropdownSeeMore';
 import useOutsideClick from '@/hooks/useOutsideClick';
-import SidebarSectionRepresent from './SidebarSectionRepresent';
+import SidebarContextMenuAction from './SidebarContextMenuAction';
+import SidebarContextMenu from './SidebarContextMenu';
 
-const SidebarDropdown = ({ item }: SidebarDropdownProps) => {
+const SidebarDropdownItem = ({ item }: SidebarDropdownProps) => {
   const [seeMore, setSeeMore] = useState(false);
 
   const dropdownRef = useOutsideClick<HTMLDivElement>(() => {
@@ -24,7 +24,7 @@ const SidebarDropdown = ({ item }: SidebarDropdownProps) => {
       <p className='text-sm text-gray-500'>{item.mainTitle}</p>
 
       <Link href={item.itemRef} className='flex items-center gap-2 w-full hover:bg-gray-200 pr-2'>
-        <SidebarSectionRepresent 
+        <SidebarContextMenuAction 
           item={{ icon: item.itemIcon, title: item.itemTitle, size: 16 }} 
           className='gap-1 p-2 w-full min-w-0' 
         />
@@ -36,9 +36,9 @@ const SidebarDropdown = ({ item }: SidebarDropdownProps) => {
         )}
       </Link>
 
-      {seeMore && <SidebarDropdownSeeMore />}
+      {seeMore && <SidebarContextMenu />}
     </section>
   );
 };
 
-export default SidebarDropdown;
+export default SidebarDropdownItem;

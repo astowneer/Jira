@@ -14,7 +14,7 @@ export default async function Home() {
       <article className="w-full flex items-center flex-col bg-gray-100">
         <section className="max-w-5xl w-full py-6 lg:py-20 flex justify-between flex-col lg:flex-row gap-8 lg:gap-10">
           <div className="py-4 lg:py-8 px-4 lg:min-w-[480px]">
-            <h1 className="text-5xl py-8 ">
+            <h1 className="text-5xl py-8">
               <span className="font-extrabold">Great outcomes</span> start with&nbsp;
               <span className="inline-flex flex-col">
                 Jira
@@ -102,7 +102,6 @@ export default async function Home() {
 
       <article className="bg-blue-600 text-white flex flex-col items-center">
         <section className="max-w-5xl w-full flex flex-col gap-6 items-center py-16 px-5">
-          {/* <div className="size-12 bg-white" /> */}
           <Image
             src="/images/ai.png"
             width={126}

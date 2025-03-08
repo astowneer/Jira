@@ -18,9 +18,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
+
         <div className="relative">
           {modal}
         </div>
+        
         <Toaster />
       </body>
     </html>

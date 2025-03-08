@@ -6,13 +6,11 @@ import Image from 'next/image';
 import useOutsideClick from '@/hooks/useOutsideClick';
 import { cn } from '@/lib/utils';
 
-const TimelineDropdown = ({
-  title,
-  items,
-}: TimelineDropdownProps) => {
+const TimelineDropdown = ({ title, items }: TimelineDropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItems, setSelectedItems] = useState<Record<string, boolean>>({});
   const [clickedOutside, setClickedOutside] = useState(false);
+
   const dropdownRef = useOutsideClick<HTMLDivElement>(() => {
     setClickedOutside(true)
     setIsOpen(false)
@@ -34,17 +32,16 @@ const TimelineDropdown = ({
   };
 
   return (
-    <div className="relative">
+    <section className="relative">
       <button
         className={cn(
-          "flex items-center gap-2 px-3 py-2 border-2 rounded-sm transition",
-          isOpen ? "bg-gray-200 border-blue-500" : "border-gray-300 hover:bg-gray-200"
+          "flex items-center gap-2 px-3 py-2 border-[1px] rounded-sm transition",
+          isOpen ? "bg-gray-200 border-blue-500" : "border-gray-200 hover:bg-gray-200"
         )}
         onClick={toggleDropdown}
       >
-        <span className={cn("font-semibold text-gray-500", isOpen && "text-blue-500")}>
-          {title}
-        </span>
+        <span className={cn("font-medium text-sm text-gray-500", isOpen && "text-blue-500")}>{title}</span>
+
         <Image
           src="/svg/open-right.svg"
           width={18}
@@ -62,19 +59,19 @@ const TimelineDropdown = ({
       {isOpen && (
         <div
           ref={dropdownRef}
-          className="absolute top-12 py-2 w-full min-w-[330px] max-h-[300px] overflow-y-auto bg-white border border-gray-300 rounded-md shadow-md"
+          className="absolute top-12 py-2 w-full min-w-[330px] max-h-[300px] overflow-y-auto bg-white border rounded-md shadow-md"
         >
-          {items.map((item) => (
+          {items.map((item) => 
             <TimelineDropdownCheckbox 
               key={item.id} 
               item={item} 
               checked={selectedItems[item.id] || false} 
               onChange={() => handleCheckboxChange(item.id)}
             />
-          ))}
+          )}
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

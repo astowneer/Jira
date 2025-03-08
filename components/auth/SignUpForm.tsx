@@ -15,6 +15,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import Link from "next/link"
+import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox"
 import { oAuthSignIn, signUp } from "@/lib/actions"
@@ -23,13 +25,10 @@ import { z } from "zod"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import { signUpSchema } from "@/lib/schemas"
-import Link from "next/link"
 import { zodResolver } from '@hookform/resolvers/zod';
-import Image from "next/image";
 
 const SignUpForm = () => {
   const [error, setError] = useState<string>()
-  const [isChecked, setIsChecked] = useState(false)
   const [showPassword, setShowPassword] = useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState<string>("");
   const form = useForm<z.infer<typeof signUpSchema>>({

@@ -1,8 +1,9 @@
-import MainHeader from "@/components/workflow/MainHeader";
+import ProjectHeader from "@/components/workflow/ProjectHeader";
 import Navbar from "@/components/workflow/Navbar";
-import Sidebar from "@/components/workflow/Sidebar";
-import { SidebarProvider } from "@/components/workflow/SidebarContext";
-import Tabs from "@/components/workflow/Tabs";
+import Sidebar from "@/components/workflow/sidebar/Sidebar";
+// import Tabs from "@/components/workflow/tabss/Tabs";
+import { SidebarProvider } from "@/components/workflow/sidebar/SidebarContext";
+import Tabs from "@/components/workflow/tabs/Tabs";
 
 export default function RootLayout({
   children,
@@ -15,13 +16,13 @@ export default function RootLayout({
         <Navbar />
         
         <section className="flex">
-          <div className="z-10">
+          <div className="z-40">
             <Sidebar />
           </div>
 
           <div className="w-full">
             <div className="p-10 pb-0">
-              <MainHeader />
+              <ProjectHeader title="Сервіс залізничної компанії" />
             </div>
 
             <Tabs />
