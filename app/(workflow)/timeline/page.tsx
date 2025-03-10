@@ -1,5 +1,5 @@
 import TimelineControls from "@/components/workflow/timeline/TimelineControls";
-import TimelineComponent from "./TimelineComponent";
+import TimelineComponent from "../../../components/workflow/timeline/TimelineComponent";
 
 export default function TimelinePage() {
   return (

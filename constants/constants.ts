@@ -1020,3 +1020,43 @@ export const itemsOnTimeline = [
     end_time: moment().add(12, 'hour')
   },
 ];
+
+export const boardCards = [
+  {
+    title: "To Do",
+    isDone: false,
+  },
+  {
+    title: "In Progress",
+    isDone: false,
+  },
+  {
+    title: "Name",
+    isDone: true
+  },
+]
+
+type TimeRangeOption = {
+  title: string;
+  changeOption: "day" | "week" | "month" | "year";
+};
+
+
+export const timeRangeOptions: TimeRangeOption[] =  [
+  {
+    title: "Today",
+    changeOption: "day",
+  },
+  {
+    title: "Week",
+    changeOption: "week",
+  },
+  {
+    title: "Month",
+    changeOption: "month",
+  },
+  {
+    title: "Year",
+    changeOption: "year",
+  },
+]

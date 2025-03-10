@@ -1,11 +1,11 @@
 "use client";
 
+import "react-calendar-timeline/style.css"
 import moment from "moment";
 import Timeline from "@/components/timeline/lib/Timeline"
-import "react-calendar-timeline/style.css"
+import TimeRange from "./TimeRange";
 import { useState } from "react";
 import { useEffect } from "react";
-import TimeRange from "./TimeRange";
 import { itemsOnTimeline, timelineGroups } from "@/constants/constants";
 
 type TimelineItem = {

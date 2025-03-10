@@ -3,31 +3,7 @@ import React from 'react'
 import TimeRangeButton from './TimeRangeButton'
 import { SetStateAction } from 'react';
 import { cn } from '@/lib/utils';
-
-
-type TimeRangeOption = {
-  title: string;
-  changeOption: "day" | "week" | "month" | "year";
-};
-
-const timeRangeOptions: TimeRangeOption[] =  [
-  {
-    title: "Today",
-    changeOption: "day",
-  },
-  {
-    title: "Week",
-    changeOption: "week",
-  },
-  {
-    title: "Month",
-    changeOption: "month",
-  },
-  {
-    title: "Year",
-    changeOption: "year",
-  },
-]
+import { timeRangeOptions } from '@/constants/constants';
 
 const TimeRange = ({
   timeRangeSelectedIndex,

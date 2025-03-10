@@ -27,7 +27,6 @@ export default function RootLayout({
 
             <div className="">
               <Tabs />
-
             </div>
 
             <div className="px-10">
