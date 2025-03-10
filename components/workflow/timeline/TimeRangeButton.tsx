@@ -59,7 +59,7 @@ const changeTimeRange = (range: "day" | "week" | "month" | "year") => {
      
       <button
         className={cn(
-          "bg-white rounded-sm font-semibold hover:bg-gray-100 p-2", 
+          "bg-white rounded-sm font-semibold hover:bg-gray-100 text-xs p-2", 
           { "bg-gray-100 text-blue-500 rounded-xs font-semibold p-2 border-[1px] border-blue-500" : isSelected},
         )}
         onClick={() => { 
