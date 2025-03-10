@@ -1,3 +1,5 @@
+import moment from "moment"
+
 export const navigationLinks = [
   {
     title: "Features",
@@ -656,6 +658,8 @@ export const sidebarDropdown = [
   },
 ];
 
+
+
 export const linksWithAdditionalInfo = [
   { icon: '/svg/recent.svg', title: 'Recent' },
   { icon: '/svg/star.svg', title: 'Starred' },
@@ -946,3 +950,73 @@ export const typesOfWorkLinks = [
     filter: "invert(40%) sepia(90%) saturate(3000%) hue-rotate(100deg) brightness(90%) contrast(100%)"
   },
 ]
+
+
+export const timelineGroups = [
+  {
+    id: 0, 
+    title: '' 
+  },
+  { 
+    id: 1,
+    title: 'Vision/Scope, бізнес-вимоги та користувацькі історії' 
+  }, 
+  {
+    id: 2, 
+    title: 'Обробити користувацькі історії' 
+  },
+  {
+    id: 3, 
+    title: 'Сформувати список функцій, характеристик та/або вимог до продукту' 
+  },
+  {
+    id: 4, 
+    title: 'Сформувати базові варіанти використання' 
+  },
+  {
+    id: 5, 
+    title: 'Матриці перекриття конфліктів' 
+  },
+  {
+    id: 6, 
+    title: '' 
+  }
+];
+
+export const itemsOnTimeline = [
+  {
+    id: 1,
+    group: 1,
+    title: 'something',
+    start_time: moment(),
+    end_time: moment().add(3, 'hour')
+  },
+  {
+    id: 2,
+    group: 2,
+    title: 'something',
+    start_time: moment().add(-0.5, 'hour'),
+    end_time: moment().add(1.5, 'hour')
+  },
+  {
+    id: 3,
+    group: 1,
+    title: 'something',
+    start_time: moment().add(9, 'hour'),
+    end_time: moment().add(12, 'hour')
+  },
+  {
+    id: 4,
+    group: 4,
+    title: 'something',
+    start_time: moment().add(3, 'hour'),
+    end_time: moment().add(5, 'hour')
+  },
+  {
+    id: 5,
+    group: 1,
+    title: 'something',
+    start_time: moment().add(9, 'hour'),
+    end_time: moment().add(12, 'hour')
+  },
+];

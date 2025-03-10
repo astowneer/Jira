@@ -20,12 +20,15 @@ export default function RootLayout({
             <Sidebar />
           </div>
 
-          <div className="w-full">
+          <div className="w-full overflow-hidden">
             <div className="p-10 pb-0">
               <ProjectHeader title="Сервіс залізничної компанії" />
             </div>
 
-            <Tabs />
+            <div className="">
+              <Tabs />
+
+            </div>
 
             <div className="px-10">
               {children}

@@ -96,9 +96,7 @@ const SidebarItemsWithDropdown = ({
                 ref={contextRef} 
                 className='absolute min-w-[200px] bg-white text-black shadow-md border-[1px] text-xs border-gray-200 p-2 z-10'
               >
-                {contextMenuLinks.map((item) => 
-                  <SidebarDropdownContextMenu key={item.title} item={item} setVisible={setVisible} />
-                )}
+                {contextMenuLinks.map((item) => <SidebarDropdownContextMenu key={item.title} item={item} setVisible={setVisible} /> )}
               </section>
             )}
           </div>
@@ -108,7 +106,6 @@ const SidebarItemsWithDropdown = ({
       {dropdownOpen && 
         <div className="pl-5 flex flex-col gap-2">
           {sidebarDropdown.map((item) => <SidebarDropdownItem key={item.itemTitle} item={item} />)}
-
           {title === 'Projects' && (
             <Link href="/explore-more" className="flex gap-2 hover:bg-gray-300 p-2">
               <Image src="/svg/recent.svg" width={16} height={16} alt="View All Projects" />

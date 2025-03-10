@@ -1,8 +1,8 @@
 "use client"
 
 import Search from '@/components/workflow/Search'
-import UserTooltip from './UserTooltip'
-import ActionTooltip from './ActionTooltip'
+import UserTooltip from '../UserTooltip'
+import ActionTooltip from '../ActionTooltip'
 import TimelineDropdown from './TimelineDropdown'
 import React, { useState } from 'react'
 import { cn } from '@/lib/utils';
@@ -28,7 +28,6 @@ const TimelineControls = () => {
 
         <div className="flex">
           {users.map((user, index) => 
-
             <UserTooltip key={user.fullName} user={user} className={`z-${index * 10}`} />
           )}
 
@@ -48,7 +47,7 @@ const TimelineControls = () => {
             }
 
             return (
-              <div className={`block ${screen}`} key={item.title}>
+              <div className={`block ${screen} z-10`} key={item.title}>
                 <TimelineDropdown title={item.title} items={item.items} />
               </div>
             )}

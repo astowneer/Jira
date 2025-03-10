@@ -103,10 +103,10 @@ const Sidebar = () => {
   if (!isOpen) return null;
 
   return (
-    <aside className="flex h-screen sticky left-0 top-[48px] select-none">
+    <aside className="flex sticky left-0 top-[48px] select-none bg-red-500 h-[calc(100vh-63px)]">
       <nav
         style={{ width: sidebarWidth }}
-        className="sticky left-0 top-[48px] flex flex-col bg-white h-screen border-r border-gray-200 pt-20 max-lg:hidden sm:p-4 xl:p-6"
+        className="sticky left-0 top-[48px] flex flex-col bg-white border-r border-gray-200 pt-20 max-lg:hidden sm:p-4 xl:p-6"
       >
         <ul>          
           <SidebarItemsWithMenu sidebarWidth={sidebarWidth} />
