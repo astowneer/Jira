@@ -20,7 +20,7 @@ const TimeRange = ({
   setVisibleTimeStart: React.Dispatch<SetStateAction<number>>,
   setVisibleTimeEnd: React.Dispatch<SetStateAction<number>>}) => {
   return (
-    <div className='bg-white text-gray-500 w-fit flex gap-1 text-sm px-1 py-2 rounded-xs drop-shadow-xs border-[1px] border-gray-200 fixed bottom-10 right-10'>
+    <div className='bg-white text-gray-500 w-fit flex gap-1 text-sm px-1 py-2 rounded-xs drop-shadow-xs border-[1px] border-gray-200 fixed bottom-5 right-5'>
       {timeRangeOpen && (
         <div className="flex gap-1">
           {timeRangeOptions.map((item, index) => (

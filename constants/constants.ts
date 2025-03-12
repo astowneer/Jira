@@ -749,11 +749,11 @@ export const users = [
   },
   {
     color: 'blue',
-    fullName: 'Stephan Bandera'
+    fullName: 'Donald Knuth'
   },
   {
     color: 'yellow',
-    fullName: 'Lumen'
+    fullName: 'Gang Of Four'
   },
 ];
 
@@ -977,10 +977,6 @@ export const timelineGroups = [
     id: 5, 
     title: 'Матриці перекриття конфліктів' 
   },
-  {
-    id: 6, 
-    title: '' 
-  }
 ];
 
 export const itemsOnTimeline = [

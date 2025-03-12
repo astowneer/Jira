@@ -62,9 +62,9 @@ const BoardCards = () => {
   };
  
   return (
-    <article className="w-full overflow-x-scroll overflow-y-hidden flex my-5 gap-3">
+    <article className="w-full overflow-x-scroll flex gap-3">
       {cards.map((item, index) => 
-        <div key={item.title} className="relative">
+        <div key={item.title} className="relative ">
           <BoardCard 
             index={index} 
             item={item}  

@@ -235,6 +235,8 @@ declare type UserTooltip = {
 declare interface UserTooltipProps {
   user?: UserTooltip;
   isDefault?: boolean;
+  borderSize?: number;
+  size?: number;
   className?: string;
 }
 

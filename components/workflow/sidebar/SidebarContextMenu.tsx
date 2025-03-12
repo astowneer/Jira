@@ -8,7 +8,7 @@ interface SidebarContextMenuProps {
 
 const SidebarContextMenu = ({ className }: SidebarContextMenuProps) => {
   return (
-    <section className={`absolute left-44 min-w-max max-md:min-w-min flex flex-col space-y-1 max-md:text-xs text-sm p-2 shadow-lg bg-white border-gray-200 z-10 ${className}`}>
+    <section className={`absolute left-44 min-w-max max-md:min-w-min flex flex-col space-y-1 max-md:text-xs text-sm p-2 shadow-lg bg-white border-gray-200 z-20 ${className}`}>
       {recentSidebarLinks.map((item) => (
         <SidebarContextMenuAction 
           key={item.title} 
