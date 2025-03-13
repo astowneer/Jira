@@ -1,11 +1,10 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { getUserFromSession } from "./app/auth/core/session";
 
-const privateRoutes = ['/projects']
+const privateRoutes = ['/projects', '/timeline', '/backlog', '/board', '/calendar'];
 
 export default async function middleware(request: NextRequest) {
   const response = await middlewareAuth(request) ?? NextResponse.next()
-
   return response;
 }
 
@@ -17,7 +16,6 @@ async function middlewareAuth(request: NextRequest) {
     }
   }
 }
-
 
 export const config = {
   matcher: [

@@ -27,27 +27,29 @@ const WorkManagementModal = ({
           />
         </button>
 
-        <h3 className="uppercase text-xs  lg:text-sm">{title}</h3>
-        <h4 className="text-xl md:text-2xl lg:text-3xl font-bold py-1 lg:py-2">{subtitle}</h4>
-        <p className="text-sm lg:text-md">{description}</p>
+        <div className="space-y-2">
+          <h3 className="uppercase text-[6px] font-bold lg:text-sm">{title}</h3>
+          <h4 className="text-xl md:text-2xl lg:text-3xl font-bold py-1 lg:py-2">{subtitle}</h4>
+          <p className="text-sm lg:text-md">{description}</p>
 
-        <ul className="flex flex-col gap-2 pt-2 pb-2 lg:pb-5 text-xs lg:text-sm">
-          {posibilities.map((possibility) => (
-            <li key={possibility.title} className="inline-flex items-center gap-2">
-              <Image 
-                src={possibility.icon}
-                width={20}
-                height={20}
-                alt="icon"
-              />
-              {possibility.title}
-            </li>
-          ))}
-        </ul>
-        
-        <button className="bg-blue-500 hover:bg-blue-700 w-fit px-5 py-2 rounded-3xl text-white font-bold mb-5">
-          Get it free
-        </button>
+          <ul className="flex flex-col gap-2 pt-2 pb-2 lg:pb-5 text-xs lg:text-sm">
+            {posibilities.map((possibility) => (
+              <li key={possibility.title} className="inline-flex items-center gap-2">
+                <Image 
+                  src={possibility.icon}
+                  width={20}
+                  height={20}
+                  alt="icon"
+                />
+                {possibility.title}
+              </li>
+            ))}
+          </ul>
+
+          <button className="bg-blue-500 hover:bg-blue-700 w-fit px-5 py-2 rounded-xl text-white font-bold mb-5">
+            Get it free
+          </button>
+        </div>
 
         <div className="w-full flex justify-center">
           <Image

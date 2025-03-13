@@ -1,16 +1,11 @@
 "use client"
 
-import ActionTooltip from "@/components/workflow/ActionTooltip";
-import BacklogInfoTooltip from "@/components/workflow/BacklogInfoTooltip";
-import UserTooltip from "@/components/workflow/UserTooltip";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useState } from "react";
-import BacklogHeader from "./BacklogHeader";
-import BacklogIssue from "./BacklogIssue";
-import BacklogCreateIssue from "./BacklogCreateIssue";
-
-
+import BacklogHeader from "../../../components/workflow/backlog/BacklogHeader";
+import BacklogIssue from "../../../components/workflow/backlog/BacklogIssue";
+import BacklogCreateIssue from "../../../components/workflow/backlog/BacklogCreateIssue";
+import { backlogIssuesInitial } from "@/constants/constants";
 
 export const typesOfWorkLinks = [
   {
@@ -58,48 +53,6 @@ const issues = [
   },
 ]
 
-
-declare type UserTooltip = {
-  color: string;
-  fullName: string;
-}
-const backlogIssuesInitial = [
-  {
-    type: "Story",
-    icon: "/svg/bookmark.svg",
-    filter: "invert(40%) sepia(90%) saturate(3000%) hue-rotate(100deg) brightness(90%) contrast(100%)",
-    id: "ASDF-1",
-    issuesText: "LKJADLKFJ",
-    status: "In progress",
-    storyPoints: "0",
-    assignedTo: [
-      {
-        fullName: "Drobidko Vladyslav Anatoliyovich",
-        color: "red",
-      },
-      {
-        fullName: "Donald Knuth",
-        color: "blue",
-      }
-    ]
-  },
-  {
-    type: "Bug",
-    icon: "/svg/bug.svg",
-    filter: "invert(20%) sepia(90%) saturate(5000%) hue-rotate(0deg) brightness(100%) contrast(90%)",
-    id: "ASDF-2",
-    issuesText: "aLKJFDLKj",
-    status: "To do",
-    storyPoints: "555",
-    assignedTo: [
-      {
-        fullName: "Drobidko Vladyslav Anatoliyovich",
-        color: "blue",
-      }
-    ]
-  },
-]
-
 export default function Backlog() {
   const [open, isOpen] = useState(true)
   const [addIssueDropdown, setAddIssueDropdown] = useState(true)
@@ -115,13 +68,6 @@ export default function Backlog() {
     setCheckedIssues((prev) =>
       prev.includes(id) ? prev.filter((issueId) => issueId !== id) : [...prev, id]
     );
-  };
-
-  const handleSubmit = () => {
-    if (issuesText.trim() !== "") {
-      setIssueText("");
-    }
-
   };
 
   const handleRemove = () => {
@@ -176,12 +122,10 @@ export default function Backlog() {
                 </div>
               )}
             </section>
-
             <BacklogCreateIssue setBacklogIssues={setBacklogIssues} />
           </>
         )}
-       
       </article>
     </main>
-  )
+  );
 }

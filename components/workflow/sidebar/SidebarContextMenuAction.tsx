@@ -1,6 +1,9 @@
 import { cn } from '@/lib/utils';
 import Image from 'next/image'
 import React from 'react'
+import { toast } from 'sonner';
+import IssueFormToast from '../IssueFormToast';
+import SidebarToast from './SidebarToast';
 
 type SidebarContextMenuAction = {
   icon: string;
@@ -16,7 +19,10 @@ interface SidebarContextMenuProps {
 
 const SidebarContextMenuAction = ({ item: { icon, title, size = 18, trash = false }, className }: SidebarContextMenuProps) => {
   return (
-    <div className={cn(`flex items-center gap-2 ${className}`, { "text-red-500" : trash })}>
+    <div 
+      className={cn(`flex items-center gap-2 ${className}`, { "text-red-500" : trash })}
+      onClick={() => toast.custom((t) => <SidebarToast title={title} />)}
+    >
       <Image 
         src={icon} 
         width={size} 

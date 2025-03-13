@@ -39,7 +39,7 @@ export async function GET(
     )
   }
 
-  redirect("/")
+  redirect("/projects")
 }
 
 function connectUserToAccount(

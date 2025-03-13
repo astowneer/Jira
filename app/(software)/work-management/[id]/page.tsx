@@ -7,8 +7,18 @@ export default async function WorkManagement({
   params: Promise<{ id: string }> 
 }) {
   const { id } = await params;
-  const { 
-    title, 
+  const numericId = Number(id);
+
+  if (isNaN(numericId) || numericId < 0 || numericId >= workManagements.length) {
+    return (
+      <section className="flex flex-col items-center py-20 space-y-2">
+        <h3 className="text-2xl font-bold text-red-500">Work Management Not Found</h3>
+        <p className="text-lg">Please check the URL and try again.</p>
+      </section>
+    );
+  }
+
+  const {  
     subtitle,
     description,
     imageMainUrl
@@ -16,22 +26,20 @@ export default async function WorkManagement({
 
   return (
     <section className="flex flex-col items-center">
-      <div className="max-w-5xl w-full py-8 flex flex-col space-y-5 px-5">
-        <div className="flex flex-col gap-3">
-          <h2 className="text-sm font-semibold">{title}</h2>
+      <div className="max-w-5xl w-full py-8 flex flex-col space-y-7 px-5">
+        <div className="flex flex-col items-center space-y-3 text-center py-10">
           <h3 className="text-4xl font-bold">{subtitle}</h3>
+          <p className="text-lg max-w-xl pb-5">{description}</p>
+
+          <Image
+            src={imageMainUrl}
+            width={903}
+            height={1449}
+            alt="work management 1"
+            className="max-w-md lg:max-w-xl h-auto"
+          />
         </div>
-       
-        <p className="text-lg">{description}</p>
-        
-        <Image
-          src={imageMainUrl}
-          width={903}
-          height={1449}
-          alt="work management 1"
-          className="max-w-md lg:max-w-xl h-auto"
-        />
       </div>
     </section>
-  )
+  );
 }

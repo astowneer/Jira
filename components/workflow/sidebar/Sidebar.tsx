@@ -26,7 +26,7 @@ type Item = LinkItem | ButtonItem;
 const contextMenuProjectLinks: Item[] = [
   {
     type: 'link',
-    ref: '/manage-project',
+    ref: 'https://asr-miniproj-team7.atlassian.net/jira/settings/projects/manage?page=1&sortKey=name&sortOrder=ASC',
     icon: '/svg/settings.svg',
     title: 'Manage project'
   },

@@ -54,7 +54,6 @@ export async function signUp(unsafeData: z.infer<typeof signUpSchema>) {
     const [user] = await db
       .insert(UserTable)
       .values({
-        // name: data.name,
         firstName: data.firstName,
         lastName: data.lastName,
         secretQuestion: data.secretQuestion,
@@ -66,7 +65,6 @@ export async function signUp(unsafeData: z.infer<typeof signUpSchema>) {
       .returning({ id: UserTable.id, role: UserTable.role })
 
       if (user == null) return "Unable to create account"
-      await createUserSession(user, await cookies())
   } catch (error) {
     return "Unable to create account"
   }
@@ -77,7 +75,7 @@ export async function signUp(unsafeData: z.infer<typeof signUpSchema>) {
 export async function logOut() {
   await removeUserFromSession(await cookies())
 
-  redirect("/");
+  redirect("/sign-in");
 }
 
 export async function oAuthSignIn(provider: OAuthProvider) {

@@ -51,17 +51,14 @@ const BacklogHeader = ({ backlogIssues, open, isOpen, handleRemove, checkedIssue
   return (
     <section className="flex justify-between gap-3 p-2 min-w-[550px]">
       <div className="flex items-center gap-2 text-xs flex-shrink-0">
-        {/* <div className="size-3 bg-gray-200" /> */}
         <input 
           type="checkbox" 
           checked={checkedIssues.length > 0}
           onChange={() => {
-            // If all issues are checked, uncheck all; otherwise, check all
             const allChecked = checkedIssues.length === backlogIssues.length;
             if (allChecked) {
-              handleRemove(); // Assuming this function clears selected issues
+              handleRemove(); 
             } else {
-              // Assuming you have a function to set checked issues
               setCheckedIssues(backlogIssues.map(issue => issue.id));
             }
           }} 
@@ -103,7 +100,11 @@ const BacklogHeader = ({ backlogIssues, open, isOpen, handleRemove, checkedIssue
         </button>
 
         <div className="relative">
-          <button ref={dropdownRef} className="hover:bg-gray-200" onClick={() => setDropdownOpen((prev) => !prev)}>
+          <button 
+            ref={dropdownRef} 
+            className="hover:bg-gray-200" 
+            onClick={() => setDropdownOpen((prev) => !prev)}
+          >
             <Image src='/svg/more.svg' width={20} height={20} alt='more' />
           </button>
 

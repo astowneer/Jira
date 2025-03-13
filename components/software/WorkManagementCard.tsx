@@ -6,6 +6,7 @@ const WorkManagementCard = ({ title, subtitle, imageUrl }: WorkManagementCard) =
     <Link 
       href="/work-management/1" 
       className="w-[245px]"
+      scroll={true}
     >
       <div className="pl-8 pt-8 bg-white w-[245px] h-[400px] overflow-hidden rounded-3xl shadow-md border-[1px] border-white/20">
         <div className="flex flex-col space-y-2 w-full h-[100px]">
@@ -14,12 +15,7 @@ const WorkManagementCard = ({ title, subtitle, imageUrl }: WorkManagementCard) =
         </div>
 
         <div className="w-full h-full">
-          <Image
-            src={imageUrl}
-            width={903}
-            height={1449}
-            alt={title}
-          />
+          <Image src={imageUrl} width={903} height={1449} alt={title} />
         </div>
       </div>
     </Link>

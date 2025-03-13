@@ -7,6 +7,7 @@ import TimelineDropdown from './TimelineDropdown'
 import React, { useState } from 'react'
 import { cn } from '@/lib/utils';
 import { timelineActionItems, timelineDropdownItems, users } from '@/constants/constants'
+import TimelineSearch from './TimelineSearch'
 
 const TimelineControls = () => {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -19,7 +20,7 @@ const TimelineControls = () => {
             { "xl:max-w-[230px] w-full": searchOpen }
           )}
         >
-          <Search 
+          <TimelineSearch 
             placeholder='Search timeline' 
             setSearchOpen={setSearchOpen} 
             className='border-2 border-gray-300'

@@ -97,7 +97,14 @@ const BoardCard = ({
         )}
 
         <div>
-          <div ref={tabMoreRef} onClick={() => setCardContextMenuIndex((prev) => prev === index ? -1 : index)} className={cn("opacity-0 hover:opacity-100 bg-gray-200 p-2 h-full", { "hidden": isEditing })}>
+          <div 
+            ref={tabMoreRef} 
+            onClick={() => setCardContextMenuIndex((prev) => prev === index ? -1 : index)} 
+            className={cn(
+              "opacity-0 hover:opacity-100 bg-gray-200 p-2 h-full", 
+              { "hidden": isEditing }
+            )}
+            >
             <Image src="/svg/more.svg" width={16} height={16} alt="more" />
           </div>
         </div>

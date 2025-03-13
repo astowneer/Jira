@@ -59,7 +59,7 @@ const TimelineDropdown = ({ title, items }: TimelineDropdownProps) => {
       {isOpen && (
         <div
           ref={dropdownRef}
-          className="absolute top-12 py-2 w-full min-w-[330px] max-h-[300px] overflow-y-auto bg-white border rounded-md shadow-md"
+          className="absolute top-12 py-2 w-full min-w-max max-h-[300px] overflow-y-auto bg-white border rounded-md shadow-md"
         >
           {items.map((item) => 
             <TimelineDropdownCheckbox 

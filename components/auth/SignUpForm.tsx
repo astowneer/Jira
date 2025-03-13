@@ -26,23 +26,27 @@ import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import { signUpSchema } from "@/lib/schemas"
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useSearchParams } from "next/navigation";
+import SignUpButton from "./SignUpButton";
 
 const SignUpForm = () => {
   const [error, setError] = useState<string>()
   const [showPassword, setShowPassword] = useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState<string>("");
+  const searchParams = useSearchParams();
+  const emailFromUrl = searchParams.get("email") || "";
+
   const form = useForm<z.infer<typeof signUpSchema>>({
     mode: 'onTouched',
     resolver: zodResolver(signUpSchema),
     defaultValues: {
       firstName: "",
       lastName: "",
-      email: "",
+      email: emailFromUrl,
       password: "",
       confirmPassword: "",
       secretQuestion: "",
       secretAnswer: "",
-
     },
   })
 
@@ -57,30 +61,19 @@ const SignUpForm = () => {
         {error && <p className="text-destructive">{error}</p>}
 
         <div className="flex flex-col gap-4">
-          <Button
-            type="button"
-            className="border-[1px] border-gray-300 px-2 py-4 bg-white hover:bg-gray-100 text-black w-full rounded-md"
-            onClick={async () => await oAuthSignIn("github")}
-          >
-            <Image src="/svg/github-mark.svg" width={18} height={18} alt="github" />
-            Github
-          </Button>
-          <Button
-            type="button"
-            className="border-[1px] border-gray-300 px-2 py-4 bg-white hover:bg-gray-100 text-black w-full rounded-md"
-            onClick={async () => await oAuthSignIn("discord")}
-          >
-            <Image src="/svg/discord.svg" width={18} height={18} alt="github" />
-            Discord
-          </Button>
+          <SignUpButton provider="github" className="border-[1px] border-gray-300 py-2  bg-white hover:bg-gray-100 text-black w-full rounded-md" />
+          <SignUpButton provider="discord" className="border-[1px] border-gray-300 py-2 bg-white hover:bg-gray-100 text-black w-full rounded-md" />
         </div>
 
         <FormField
           control={form.control}
           name="firstName"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>First name</FormLabel>
+            <FormItem className="relative">
+              <FormLabel className="relative inline-block before:content-['*'] before:absolute before:-top-2 before:text-gray-700  before:text-xs">
+                <span className="pl-2">First name</span>
+              </FormLabel>
+
               <FormControl>
                 <Input type="text" {...field} />
               </FormControl>
@@ -93,7 +86,9 @@ const SignUpForm = () => {
           name="lastName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Last name</FormLabel>
+              <FormLabel className="relative inline-block before:content-['*'] before:absolute before:-top-2 before:text-gray-700  before:text-xs">
+                <span className="pl-2">Last name</span>
+              </FormLabel>
               <FormControl>
                 <Input type="text" {...field} />
               </FormControl>
@@ -106,7 +101,10 @@ const SignUpForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className="relative inline-block before:content-['*'] before:absolute before:-top-2 before:text-gray-700  before:text-xs">
+                <span className="pl-2">Email</span>
+              </FormLabel>
+
               <FormControl>
                 <Input type="email" {...field} />
               </FormControl>
@@ -119,7 +117,10 @@ const SignUpForm = () => {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel className="relative inline-block before:content-['*'] before:absolute before:-top-2 before:text-gray-700  before:text-xs">
+                <span className="pl-2">Password</span>
+              </FormLabel>
+
               <div className="relative">
                 <FormControl>
                   <Input type={showPassword ? "text" : "password" } {...field} />
@@ -144,7 +145,10 @@ const SignUpForm = () => {
           name="confirmPassword"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Confirm password</FormLabel>
+              <FormLabel className="relative inline-block before:content-['*'] before:absolute before:-top-2 before:text-gray-700  before:text-xs">
+                <span className="pl-2">Confirm Password</span>
+              </FormLabel>
+
               <div className="relative">
                 <FormControl>
                   <Input type={showPassword ? "text" : "password" } {...field} />
@@ -169,7 +173,9 @@ const SignUpForm = () => {
           name="secretQuestion"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Secret Question</FormLabel>
+              <FormLabel className="relative inline-block before:content-['*'] before:absolute before:-top-2 before:text-gray-700  before:text-xs">
+                <span className="pl-2">Secret Question</span>
+              </FormLabel>
               <Select
                 onValueChange={(value) => {
                   field.onChange(value);
@@ -219,7 +225,7 @@ const SignUpForm = () => {
                   onCheckedChange={field.onChange}
                   className="data-[state=checked]:bg-blue-500 data-[state=checked]:border-none"
                 />
-                <label htmlFor="terms" className="text-sm font-medium">
+                <label htmlFor="terms" className="select-none font-medium text-xs">
                   Accept terms and conditions
                 </label>
               </div>
@@ -231,7 +237,7 @@ const SignUpForm = () => {
         <div className="flex flex-col gap-4 justify-end">
           <Button type="submit" className="bg-blue-600 hover:bg-blue-700 font-semibold text-white px-2 py-2 w-full rounded-md">Sign Up</Button>
           <Button asChild variant="link" className="text-blue-500">
-            <Link href="/sign-in" className="hover:underline">Already Sign up? Try to Sign in</Link>
+            <Link href="/sign-in" className="hover:underline text-xs">Already Sign up? Try to Sign in</Link>
           </Button>
         </div>
       </form>

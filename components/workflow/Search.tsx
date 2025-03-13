@@ -1,7 +1,10 @@
 "use client";
 
+import React, { useState, useEffect } from 'react'
 import { MagnifyingGlassIcon } from '@heroicons/react/16/solid';
-import React, { useState } from 'react'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useDebouncedCallback } from 'use-debounce';
+import SearchResult from './SearchResult';
 
 interface SearchProps {
   placeholder?: string, 
@@ -14,11 +17,27 @@ const Search = ({
   setSearchOpen, 
   className 
 }: SearchProps) => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
 
-  const handleSearch = (term: string) => {
-    
-  }
+  const [searchTerm, setSearchTerm] = useState(searchParams.get("query") || "");
+
+  useEffect(() => {
+    setSearchTerm(searchParams.get("query") || "");
+  }, [searchParams]);
+
+  const handleSearch = useDebouncedCallback((term: string) => {
+    const params = new URLSearchParams(searchParams);
+
+    if (term) {
+      params.set('query', term);
+    } else {
+      params.delete('query');
+    }
+
+    replace(`${pathname}?${params.toString()}`, { scroll: false });
+  }, 300);
 
   return (
     <section className="relative w-full">
@@ -36,6 +55,8 @@ const Search = ({
           onBlur={() => setSearchOpen && setSearchOpen(false)}
           defaultValue={searchTerm}
         />
+
+        <SearchResult />
       </div>
     </section>
   );

@@ -1,8 +1,12 @@
+"use client";
+
 import React, { SetStateAction } from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
-import Search from '../Search';
 import useOutsideClick from '@/hooks/useOutsideClick';
+import SidebarSearch from './SidebarSearch';
+import { useState } from 'react';
+import SidebarSearchResult from './SidebarSearchResult';
 
 declare type SidebarExtraSubmenuType = {
   represent: {
@@ -30,6 +34,8 @@ const SidebarOptionsList = ({
   setMenuListIndex, 
   menuListIndex 
 }: SidebarOptionsList) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
   const submenuRef = useOutsideClick<HTMLLIElement>(() => {
     setTimeout(() => {
       setMenuListIndex((prev) => (prev === menuListIndex ? -1 : prev));
@@ -45,20 +51,29 @@ const SidebarOptionsList = ({
       {item.submenu.length > 0 ? (
         <div className="flex flex-col space-y-3">
           <h2 className='font-semibold'>{item.represent.title}</h2>
-          <Search />
+          {/* <Search /> */}
+          <SidebarSearch searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+
           <p>Today</p>
 
           <div className='max-h-[400px] overflow-scroll'>
-            {item.submenu.map((sItem) => (
-              <Link key={sItem.route} href={sItem.route} className='flex items-center gap-2 hover:bg-gray-100 duration-300 p-1'>
-                <Image src={sItem.icon} width={16} height={16} alt="recent" />
+            {searchTerm ? (
+              <SidebarSearchResult searchQuery={searchTerm} />
+            ): (
+              <>
+                {item.submenu.map((sItem) => (
+                  <Link key={sItem.route} href={sItem.route} className='flex items-center gap-2 hover:bg-gray-100 duration-300 p-1'>
+                    <Image src={sItem.icon} width={16} height={16} alt="recent" />
 
-                <div>
-                  <h3>{sItem.title}</h3>
-                  <p>{sItem.time}</p>
-                </div>
-              </Link>          
-            ))}
+                    <div>
+                      <h3>{sItem.title}</h3>
+                      <p>{sItem.time}</p>
+                    </div>
+                  </Link>          
+                ))}
+              </>
+            )}
+           
           </div>
           
           {item.represent.title === 'Recent' && (

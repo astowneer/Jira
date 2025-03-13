@@ -88,15 +88,15 @@ export const workManagements = [
       },
       {
         title: "Progress tracking",
-        icon: "/svg/trending.svg"
+        icon: "/svg/stack.svg"
       },
       {
         title: "Sprint planning",
-        icon: "/svg/trending.svg"
+        icon: "/svg/calendar.svg"
       },
       {
         title: "Forms",
-        icon: "/svg/trending.svg"
+        icon: "/svg/rocket.svg"
       },
     ],
     imagePreviewUrl: "/images/jira-card.webp",
@@ -108,20 +108,20 @@ export const workManagements = [
     description: "Make launching viral marketing campaigns a breeze. Break down complex campaigns into actionable steps, easily collect requests, and stay aligned with cross-functional teams.",
     posibilities: [
       {
-        title: "Calendar view",
+        title: "Analytics",
         icon: "/svg/trending.svg"
       },
       {
         title: "Progress tracking",
-        icon: "/svg/trending.svg"
+        icon: "/svg/stack.svg"
+      },
+      {
+        title: "Sprint planning",
+        icon: "/svg/calendar.svg"
       },
       {
         title: "Forms",
-        icon: "/svg/trending.svg"
-      },
-      {
-        title: "Reporting",
-        icon: "/svg/trending.svg"
+        icon: "/svg/rocket.svg"
       },
     ],
     imagePreviewUrl: "/images/heroCardMarketing.webp",
@@ -133,20 +133,20 @@ export const workManagements = [
     description: "Streamline IT projects and deliver reliable services to internal teams, from migration management to software deployment. Gain visibility across IT workflows to align technology projects to business goals.",
     posibilities: [
       {
-        title: "Intake requests",
+        title: "Analytics",
         icon: "/svg/trending.svg"
       },
       {
         title: "Progress tracking",
-        icon: "/svg/trending.svg"
+        icon: "/svg/stack.svg"
       },
       {
-        title: "Release management",
-        icon: "/svg/trending.svg"
+        title: "Sprint planning",
+        icon: "/svg/calendar.svg"
       },
       {
-        title: "Reporting",
-        icon: "/svg/trending.svg"
+        title: "Forms",
+        icon: "/svg/rocket.svg"
       },
     ],
     imagePreviewUrl: "/images/heroCardIt.webp",
@@ -163,15 +163,15 @@ export const workManagements = [
       },
       {
         title: "Progress tracking",
-        icon: "/svg/trending.svg"
+        icon: "/svg/stack.svg"
       },
       {
         title: "Sprint planning",
-        icon: "/svg/trending.svg"
+        icon: "/svg/calendar.svg"
       },
       {
         title: "Forms",
-        icon: "/svg/trending.svg"
+        icon: "/svg/rocket.svg"
       },
     ],
     imagePreviewUrl: "/images/heroCardDesign.webp",
@@ -370,31 +370,31 @@ export const footerLinks = [
     links: [
       {
         title: "Company",
-        route: "/company"
+        route: "https://www.atlassian.com/company"
       },
       {
         title: "Careers",
-        route: "/company"
+        route: "https://www.atlassian.com/company/careers"
       },
       {
         title: "Events",
-        route: "/company"
+        route: "https://www.atlassian.com/company/events"
       },
       {
         title: "Blogs",
-        route: "/company"
+        route: "https://www.atlassian.com/blog"
       },
       {
         title: "Investor Relations",
-        route: "/company"
+        route: "https://investors.atlassian.com/"
       },
       {
         title: "Atlassian Foundation",
-        route: "/company"
+        route: "https://www.atlassianfoundation.org/"
       },
       {
         title: "Contact us",
-        route: "/company"
+        route: "https://www.atlassian.com/company/contact"
       },
     ]
   },
@@ -496,15 +496,15 @@ export const footerLinks = [
 export const footerCopyrightLink = [
   {
     title: "Privacy policy",
-    route: "/privacy"
+    route: "https://www.atlassian.com/legal/privacy-policy#what-this-policy-covers"
   },
   {
     title: "Terms",
-    route: "/terms"
+    route: "https://www.atlassian.com/legal/atlassian-customer-agreement#intro"
   },
   {
     title: "Impressum",
-    route: "/impressum"
+    route: "https://www.atlassian.com/legal/impressum"
   },
 ]
 
@@ -658,8 +658,6 @@ export const sidebarDropdown = [
   },
 ];
 
-
-
 export const linksWithAdditionalInfo = [
   { icon: '/svg/recent.svg', title: 'Recent' },
   { icon: '/svg/star.svg', title: 'Starred' },
@@ -684,23 +682,6 @@ export const recentSidebarLinks = [
     title: 'Delete projects'
   },
 ];
-
-// export const history: SidebarExtraSubmenu[] = [
-//   {
-//     icon: '/svg/recent.svg',
-//     title: 'SCRUM board',
-//     route: '/scrum-board',
-//     time: '33 minutes ago'
-//   },
-//   {
-//     icon: '/svg/recent.svg',
-//     route: '/service-of-rails-company',
-//     title: 'Сервіс залізничної компанії',
-//     time: '36 minutes ago'
-//   },
-// ]
-
-// export const starred: SidebarExtraSubmenu[] = [];
 
 export const sidebarExtraItems: SidebarExtraSubmenuType[] = [
   {
@@ -1054,5 +1035,75 @@ export const timeRangeOptions: TimeRangeOption[] =  [
   {
     title: "Year",
     changeOption: "year",
+  },
+]
+
+export const backlogIssuesInitial = [
+  {
+    type: "Story",
+    icon: "/svg/bookmark.svg",
+    filter: "invert(40%) sepia(90%) saturate(3000%) hue-rotate(100deg) brightness(90%) contrast(100%)",
+    id: "ASDF-1",
+    issuesText: "LKJADLKFJ",
+    status: "In progress",
+    storyPoints: "0",
+    assignedTo: [
+      {
+        fullName: "Drobidko Vladyslav Anatoliyovich",
+        color: "red",
+      },
+      {
+        fullName: "Donald Knuth",
+        color: "blue",
+      }
+    ]
+  },
+  {
+    type: "Bug",
+    icon: "/svg/bug.svg",
+    filter: "invert(20%) sepia(90%) saturate(5000%) hue-rotate(0deg) brightness(100%) contrast(90%)",
+    id: "ASDF-2",
+    issuesText: "aLKJFDLKj",
+    status: "To do",
+    storyPoints: "555",
+    assignedTo: [
+      {
+        fullName: "Drobidko Vladyslav Anatoliyovich",
+        color: "blue",
+      }
+    ]
+  },
+]
+
+type StatusDropdown = {
+  status: string;
+}
+
+export const issuesStatusDropdownList: StatusDropdown[] = [
+  {
+    status: "Done"
+  },
+  {
+    status: "In Progress"
+  },
+  {
+    status: "To Do"
+  },
+  {
+    status: "Review"
+  },
+]
+
+
+export const issues = [
+  {
+    title: "Story",
+    icon: "/svg/bookmark.svg",
+    filter: "invert(40%) sepia(90%) saturate(3000%) hue-rotate(100deg) brightness(90%) contrast(100%)"
+  },
+   {
+    title: "Bug",
+    icon: "/svg/bug.svg",
+    filter: "invert(20%) sepia(90%) saturate(5000%) hue-rotate(0deg) brightness(100%) contrast(90%)"
   },
 ]

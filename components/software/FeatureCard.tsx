@@ -6,7 +6,7 @@ const FeatureCard = ({ title, subtitle, btnTitle, imageUrl }: FeatureCard) => {
     <section className="max-w-5xl w-full px-5 pt-6 flex flex-col items-center space-y-2">
       <h2 className="text-xl lg:text-3xl font-bold py-5 text-center">{title}</h2>
       <p className="text-lg text-center">{subtitle}</p>
-      <Link href="#" className="text-blue-600 hover:text-blue-900 duration-300">{btnTitle}</Link>
+      <Link href="/https://www.atlassian.com/software/jira/guides/issues/overview#what-are-issue-types" className="text-blue-600 hover:text-blue-900 duration-300">{btnTitle}</Link>
 
       {imageUrl && (
         <Image

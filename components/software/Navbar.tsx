@@ -8,6 +8,7 @@ import NavbarDropdownLink from "./NavbarDropdown";
 import Link from "next/link";
 import Search from "./Search";
 import SignIn from "./SignIn";
+import MobileNav from "./MobileNav";
 
 const Navbar = () => {
   const [searchSelected, setSearchSelected] = useState(false);
@@ -92,11 +93,12 @@ const Navbar = () => {
                   </Fragment>
                 ))}
               </ul>
+              
 
               <div className="flex items-center gap-5">
-                <button className="bg-blue-500 hover:bg-blue-700 px-5 py-2 rounded-3xl text-white font-bold">
+                <Link href="https://www.atlassian.com/try/cloud/signup?bundle=jira-software&edition=free" className="bg-blue-500 hover:bg-blue-700 px-5 py-2 rounded-3xl text-white font-bold">
                   Get it free
-                </button>
+                </Link>
 
                 <div className="flex items-center">
                   <div className="flex items-center">
@@ -110,6 +112,10 @@ const Navbar = () => {
                   </div>
 
                   <SignIn />
+                </div>
+                
+                <div className="block lg:hidden">
+                  <MobileNav />
                 </div>
               </div>
             </>

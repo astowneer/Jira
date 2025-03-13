@@ -13,7 +13,7 @@ export default async function SignIn({
 }: {
   searchParams: Promise<{ oauthError?: string }>
 }) {
-  const { oauthError } = await searchParams
+  const { oauthError } = await searchParams;
 
   return (
     <div className="container mx-auto px-4 py-10 max-w-[450px] overflow-y-scroll flex flex-col justify-center h-screen">
@@ -28,6 +28,7 @@ export default async function SignIn({
             </CardDescription>
           )}
         </CardHeader>
+        
         <CardContent>
           <SignInForm />
         </CardContent>

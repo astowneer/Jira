@@ -1,20 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import { featureCards, integraionCards, newFeatureCards, sponsorsCards, workManagements } from "@/constants/constants";
+import { getCurrentUser } from "@/lib/currentUser";
 import FeatureCard from "@/components/software/FeatureCard";
 import NewFeatureCard from "@/components/software/NewFeatureCard";
 import SponsorBrandCard from "@/components/software/SponsorBrandCard";
 import WorkManagementCard from "@/components/software/WorkManagementCard";
 import Accordeon from "@/components/software/Accordeon";
 import IntegrationCard from "@/components/software/IntegrationCard";
+import SignUpForm from "../../components/software/SignUpForm";
 
 export default async function Home() {
+  const user = await getCurrentUser({ withFullUser: true });
+
   return (
     <main className="">
       <article className="w-full flex items-center flex-col bg-gray-100">
         <section className="max-w-5xl w-full py-6 lg:py-20 flex justify-between flex-col lg:flex-row gap-8 lg:gap-10">
-          <div className="py-4 lg:py-8 px-4 lg:min-w-[480px]">
-            <h1 className="text-5xl py-8">
+          <div className="py-4 lg:py-8 px-4 w-full ">
+            <h1 className="text-5xl py-4">
               <span className="font-extrabold">Great outcomes</span> start with&nbsp;
               <span className="inline-flex flex-col">
                 Jira
@@ -24,50 +28,7 @@ export default async function Home() {
             <h2 className="text-xl">The only project management tool you need to plan and track work across every team.</h2>
           </div>
 
-          <div className="py-4 lg:py-8 px-4 lg:min-w-[450px] flex flex-col space-y-4">
-            <form action="" className="flex flex-col gap-2">
-              <label htmlFor="email" className="font-bold text-sm">
-                Work Email
-              </label>
-              <input 
-                id="email"
-                type="text" 
-                placeholder="you@company@com"
-                className="py-2 pl-5 pr-2 rounded-3xl outline-none border-gray-400/30 border-[1px]"
-              />
-              <p className="text-gray-500 text-[10px]">Find teammates, plus keep work and life separate by using your work email.</p>
-              <button type="submit" className="w-full flex justify-center bg-blue-500 hover:bg-blue-700 py-1 px-3 rounded-3xl text-xl font-semibold text-white mt-2">Sign up</button>
-            </form>
-
-            <div className="flex justify-center items-center px-2">
-              <div className="border-solid border-b-[1px] -translate-y-1/2 border-gray-400/40 w-full" />
-              <div className="text-sm text-center w-full">Or continue with</div>
-              <div className="border-solid border-b-[1px] -translate-y-1/2 border-gray-400/40 w-full" />
-            </div>
-
-            <div className="flex justify-between items-center gap-3">
-              <button className="bg-white rounded-3xl py-1 px-3 w-full border-[1px] shadow-sm hover:bg-gray-100 flex items-center justify-center gap-2">
-                <Image 
-                  src="/svg/google.png"
-                  width={18}
-                  height={18}
-                  alt="google icon"
-                  className="size-[18px]"
-                />
-                Google
-              </button>
-              <button className="bg-white rounded-3xl py-1 px-3 w-full border-[1px] shadow-sm hover:bg-gray-100 flex items-center justify-center gap-2">
-                <Image 
-                  src="/svg/microsoft.png"
-                  width={18}
-                  height={18}
-                  alt="google icon"
-                  className="size-[18px]"
-                />
-                Microsoft
-              </button>
-            </div>
-          </div>
+          {!user && <SignUpForm />}
         </section>
         
         <section className="flex overflow-x-hidden w-full">
@@ -111,7 +72,7 @@ export default async function Home() {
           />
           <h3 className="text-2xl lg:text-4xl font-bold text-center">Your next move, suggested by AI</h3>
           <p className="text-lg text-center">Atlassian Intelligence takes your big ideas and automatically suggests the tasks to help get it done.</p>
-          <button className="text-xl border-2 font-semibold border-white py-2 px-6 rounded-md hover:bg-blue-700/50">Explore Atlassian Intelligence</button>
+          <Link href="https://www.atlassian.com/platform/artificial-intelligence" className="text-xl border-2 font-semibold border-white py-2 px-6 rounded-md hover:bg-blue-700/50">Explore Atlassian Intelligence</Link>
           <Image
             src="/images/ai-img.webp"
             width={2752}
@@ -179,7 +140,7 @@ export default async function Home() {
           <section className="max-w-5xl w-full flex flex-col 2xl:items-start items-center gap-8 py-5">
             <h2 className="text-3xl font-bold text-center 2xl:text-left 2xl:text-5xl">Meets teams where they work</h2>
             <p className="text-lg text-center 2xl:text-left">If your team uses it, we integrate with it. Easily add your favorite tools from the Atlassian Marketplace, keeping Jira as your central source of truth.</p>
-            <button className="border-2 border-black w-fit px-8 py-3 rounded-3xl text-lg 2xl:text-2xl hover:bg-gray-200 duration-300">See all integrations</button>
+            <Link href="https://marketplace.atlassian.com/" className="border-2 border-black w-fit px-8 py-3 rounded-3xl text-lg 2xl:text-2xl hover:bg-gray-200 duration-300">See all integrations</Link>
           </section>
 
           <section className="flex flex-wrap justify-center items-center gap-5 max-2xl:max-w-[400px] 2xl:w-full p-2">
@@ -210,7 +171,7 @@ export default async function Home() {
             <h2 className="text-3xl lg:text-5xl font-bold text-center 2xl:text-left">For teams big & small</h2>
             <p className="text-md px-12 lg:px-0 lg:text-2xl text-center 2xl:text-left">Hear from start-ups & large enterprises that prefer Atlassian</p>
             <Link 
-              href="/"
+              href="https://www.atlassian.com/customers/roblox"
               className="text-center text-blue-600 text-sm lg:text-lg 2xl:text-left"
             >
               See more customer stories
@@ -255,7 +216,7 @@ export default async function Home() {
         <section className="max-w-5xl px-8 w-full pt-24 flex flex-col lg:flex-row items-center gap-5">
           <div className="flex flex-col items-center lg:items-start gap-[40px]">
             <p className="max-w-[765px] text-4xl text-center lg:text-left font-extrabold text-white">No matter what you're trying to dream up, Jira helps you get it done</p>
-            <button className="bg-yellow-500 hover:bg-yellow-300 duration-300 text-bas text-black font-semibold w-fit px-10 py-2 rounded-md">Get Jira free</button>
+            <Link href="https://www.atlassian.com/try/cloud/signup?bundle=jira-software" className="bg-yellow-500 hover:bg-yellow-300 duration-300 text-bas text-black font-semibold w-fit px-10 py-2 rounded-md">Get Jira free</Link>
           </div>
         
           <div className="relative">

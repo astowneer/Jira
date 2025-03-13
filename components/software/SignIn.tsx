@@ -40,28 +40,6 @@ const SignIn = () => {
       {showProfile && <UserContextMenu fullUser={fullUser} />}
     </div>
   );
-  // return (
-  //   <>
-  //     {fullUser == null ? (
-  //       <Link 
-  //         href="/sign-in"
-  //         className="text-blue-700 text-sm hover:bg-gray-200 px-3 py-2"
-  //       >
-  //         Sign in
-  //       </Link>
-  //     ) : (
-  //       <div ref={dropdownRef} className="relative select-none">
-  //         <p 
-  //           className="font-bold text-blue-500 hover:text-blue-600 cursor-pointer" 
-  //           onClick={() => setShowProfile((prev) => !prev)}
-  //         >
-  //           {fullUser.firstName}
-  //         </p>
-  //         {showProfile && <UserContextMenu fullUser={fullUser} />}
-  //       </div>
-  //     )}
-  //   </>
-  // );
 };
 
 export default SignIn;

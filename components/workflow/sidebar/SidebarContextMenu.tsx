@@ -12,14 +12,14 @@ const SidebarContextMenu = ({ className }: SidebarContextMenuProps) => {
       {recentSidebarLinks.map((item) => (
         <SidebarContextMenuAction 
           key={item.title} 
-          item={{ ...item, size: 16}} 
+          item={{ ...item, size: 16 }} 
           className='flex items-center gap-2 p-2 max-sm:px-0 hover:bg-gray-200' 
         />
       ))}
       
-      <div className='flex items-center gap-3 pt-5 text-sm max-sm:hidden px-2'>
+      <div className='flex items-center gap-1 text-sm max-sm:hidden px-2 py-1'>
         <div className="w-[38px] h-auto flex flex-shrink-0 max-md:hidden">
-          <Image src="/images/jira.png" width={1200} height={814} alt="jira logo" />
+          <Image src="/svg/atlassian.svg" width={1200} height={814} alt="jira logo" className='size-5' />
         </div>
 
         <div className='flex flex-col text-gray-600 text-xs'>

@@ -1,9 +1,9 @@
+import { SidebarProvider } from "@/components/workflow/sidebar/SidebarContext";
 import ProjectHeader from "@/components/workflow/ProjectHeader";
 import Navbar from "@/components/workflow/Navbar";
 import Sidebar from "@/components/workflow/sidebar/Sidebar";
-// import Tabs from "@/components/workflow/tabss/Tabs";
-import { SidebarProvider } from "@/components/workflow/sidebar/SidebarContext";
 import Tabs from "@/components/workflow/tabs/Tabs";
+import IssueForm from "@/components/workflow/IssueForm";
 
 export default function RootLayout({
   children,
@@ -34,6 +34,7 @@ export default function RootLayout({
             </div>
           </div>
         </section>
+        <IssueForm />
       </main>
     </SidebarProvider>
   );

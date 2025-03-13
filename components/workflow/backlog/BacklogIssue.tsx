@@ -7,6 +7,7 @@ import { SetStateAction } from 'react';
 import BacklogDropdownStatus from './BacklogDropdownStatus';
 import useOutsideClick from '@/hooks/useOutsideClick';
 import BacklogDropdown from './BacklogDropdown';
+import { issuesStatusDropdownList } from '@/constants/constants';
 
 type BacklogIssues = {
   type: string;
@@ -28,24 +29,23 @@ type Issue = {
   filter: string;
 }
 
+
 type StatusDropdown = {
   status: string;
 }
 
-const issuesStatusDropdownList: StatusDropdown[] = [
-  {
-    status: "Done"
-  },
-  {
-    status: "In Progress"
-  },
-  {
-    status: "To Do"
-  },
-  {
-    status: "Review"
-  },
-]
+interface BacklogIssueProps {
+  index: number, 
+  item: BacklogIssues;
+  statusDropdownOpenIndex: number, 
+  setStatusDropdownOpenIndex: React.Dispatch<SetStateAction<number>>, 
+  setCurrentIssue: React.Dispatch<SetStateAction<Issue>>,  
+  checkedIssues: string[], 
+  handleCheckboxChange: (id: string) => void, 
+  setBacklogIssues: React.Dispatch<SetStateAction<BacklogIssues[]>>, 
+  moreDropdownOpenIndex: number, 
+  setMoreDropdownOpenIndex: React.Dispatch<SetStateAction<number>> 
+}
 
 const BacklogIssue = ({ 
   item,
@@ -58,18 +58,7 @@ const BacklogIssue = ({
   setBacklogIssues, 
   moreDropdownOpenIndex, 
   setMoreDropdownOpenIndex 
-}: { 
-  item: BacklogIssues, 
-  index: number, 
-  statusDropdownOpenIndex: number, 
-  setStatusDropdownOpenIndex: React.Dispatch<SetStateAction<number>>, 
-  setCurrentIssue: React.Dispatch<SetStateAction<Issue>>,  
-  checkedIssues: string[], 
-  handleCheckboxChange: (id: string) => void, 
-  setBacklogIssues: React.Dispatch<SetStateAction<BacklogIssues[]>>, 
-  moreDropdownOpenIndex: number, 
-  setMoreDropdownOpenIndex: React.Dispatch<SetStateAction<number>> 
-}) => {
+}: BacklogIssueProps) => {
   const handleChangeStatus = (value: string, index: number) => {
     setBacklogIssues((prev) => 
       prev.map((issue, i) => 
@@ -86,12 +75,6 @@ const BacklogIssue = ({
     );
   };
 
-  // const [dropdownOpen, setDropdownOpen] = useState(false);
-  // const dropdownRef = useOutsideClick<HTMLButtonElement>(() => {
-  //   setTimeout(() => setDropdownOpen(false), 300);
-  // });
-
-
   const dropdownStatusRef = useOutsideClick<HTMLDivElement>(() => {
     setTimeout(() => setStatusDropdownOpenIndex(-1), 300)
   })
@@ -99,11 +82,6 @@ const BacklogIssue = ({
   const dropdownMoreRef = useOutsideClick<HTMLButtonElement>(() => {
     setTimeout(() => setMoreDropdownOpenIndex(-1), 300)
   })
-
-  const handleRemove = () => {
-    
-  }
-
 
   return (
     <label 
@@ -123,7 +101,7 @@ const BacklogIssue = ({
           src={item.icon} 
           width={14} 
           height={14} 
-          alt='more' 
+          alt={item.type} 
           style={{ filter: item.filter }} 
         />
         <p className="text-xs uppercase text-gray-600">{item.id}</p>
@@ -145,7 +123,11 @@ const BacklogIssue = ({
             </div>
 
             {statusDropdownOpenIndex === index && (
-              <div className="absolute top-5 min-w-max w-[120px] py-1 bg-white border-gray-300 border-[1px] z-30" onClick={(e) => e.preventDefault()}  ref={dropdownStatusRef}>
+              <div 
+                ref={dropdownStatusRef}
+                onClick={(e) => e.preventDefault()}  
+                className="absolute top-5 min-w-max w-[120px] py-1 bg-white border-gray-300 border-[1px] z-30" 
+              >
                 {issuesStatusDropdownList.map((item) =>
                   <BacklogDropdownStatus 
                     key={item.status} 
@@ -177,30 +159,10 @@ const BacklogIssue = ({
               <UserTooltip key={user.fullName} user={user}/>
             )}
           </div>
-          {/* <button className="hover:bg-gray-200">
-            <Image src='/svg/more.svg' width={20} height={20} alt='more' />
-          </button> */}
         </div>
       </div>
     </label>
-  )
-}
+  );
+};
 
-export default BacklogIssue
-
-// <div className="relative">
-// <button 
-//   className="hover:bg-gray-200 bg-red-500" 
-//   onClick={(e) => {
-//     setMoreDropdownOpenIndex((prev) => prev === index ? -1 : index)
-//   }}
-// >
-//   <Image src='/svg/more.svg' width={20} height={20} alt='more' />
-// </button>
-
-// {moreDropdownOpenIndex === index && (
-//   <section ref={dropdownMoreRef} className='bg-white py-2 absolute top-5 right-0 flex flex-col border-[1px] border-gray-200 min-w-[180px] text-xs z-30'>
-//     <BacklogDropdown title='Remove' handle={handleRemove} />
-//   </section>
-// )}
-// </div>
+export default BacklogIssue;
