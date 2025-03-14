@@ -6,15 +6,12 @@ import Search from "./Search"
 import UserProfile from "./UserProfile"
 import useOutsideClick from "@/hooks/useOutsideClick"
 import UserContextMenu from "./UserContextMenu"
-import NavbarItem from "./NavbarItem"
 import { Plus } from "lucide-react"
 import { useState, useEffect } from "react";
 import { getCurrentUser } from "@/lib/currentUser"
 import { useSidebar } from "./sidebar/SidebarContext"
 // import { navbarItems } from "@/constants/constants"
 import Notifications from "./Notifications"
-import MobileNav from "../software/MobileNav"
-import HelpNav from "./HelpNav"
 
 const Navbar = () => {
   const [showProfile, setShowProfile] = useState(false);

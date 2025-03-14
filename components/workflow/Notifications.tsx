@@ -25,7 +25,7 @@ const Notifications = () => {
 
       <div className="flex flex-col justify-center items-center text-center py-3 space-y-4">
         <Image src="/svg/notification.svg" width={1200} height={814} alt="jira logo" className="size-12" />
-        <p className="text-xs">That's all your notifications from<br/> the last 30 days.</p>
+        <p className="text-xs">That&apos;s all your notifications from<br/> the last 30 days.</p>
       </div>
     </div>
   );

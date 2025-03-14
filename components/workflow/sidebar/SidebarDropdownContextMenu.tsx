@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import React, { SetStateAction } from 'react'
 import SidebarContextMenuAction from './SidebarContextMenuAction'
-import useOutsideClick from '@/hooks/useOutsideClick';
 
 type LinkItem = {
   type: "link";

@@ -215,7 +215,7 @@ export default async function Home() {
       <article className="bg-blue-600 w-screen flex justify-center">
         <section className="max-w-5xl px-8 w-full pt-24 flex flex-col lg:flex-row items-center gap-5">
           <div className="flex flex-col items-center lg:items-start gap-[40px]">
-            <p className="max-w-[765px] text-4xl text-center lg:text-left font-extrabold text-white">No matter what you're trying to dream up, Jira helps you get it done</p>
+            <p className="max-w-[765px] text-4xl text-center lg:text-left font-extrabold text-white">No matter what you&apos;re trying to dream up, Jira helps you get it done</p>
             <Link href="https://www.atlassian.com/try/cloud/signup?bundle=jira-software" className="bg-yellow-500 hover:bg-yellow-300 duration-300 text-bas text-black font-semibold w-fit px-10 py-2 rounded-md">Get Jira free</Link>
           </div>
         

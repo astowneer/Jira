@@ -79,7 +79,7 @@ const BoardCards = () => {
               index={index} 
               board={cards}  
               key={cards[index].title} 
-              title={cards[index].title} 
+              // title={cards[index].title} 
               BoardContextMenuIndex={cardContextMenuIndex} 
               handleOnMoveLeft={handleOnMoveLeft} 
               handleOnMoveRight={handleOnMoveRight} 

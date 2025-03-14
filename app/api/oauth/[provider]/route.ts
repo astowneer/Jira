@@ -1,4 +1,4 @@
-import { getOAuthClient, OAuthClient } from "@/app/auth/core/oauth/base";
+import { getOAuthClient } from "@/app/auth/core/oauth/base";
 import { createUserSession } from "@/app/auth/core/session";
 import { db } from "@/app/drizzle/db";
 import {  OAuthProvider, oAuthProviders, UserOAuthAccountTable, UserTable } from "@/app/drizzle/schema";

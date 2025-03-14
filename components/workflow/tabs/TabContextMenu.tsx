@@ -30,7 +30,7 @@ const TabContextMenu = ({
       <button
         className="w-full p-2 hover:bg-gray-200 text-left"
         onClick={() =>
-          toast.custom((t) => (
+          toast.custom(() => (
             <TabToast title={title} />
           ))
         }

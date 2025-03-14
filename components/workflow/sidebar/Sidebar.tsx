@@ -74,12 +74,12 @@ const SIDEBAR_MAX_WIDTH = 400;
 
 const Sidebar = () => {
   const [sidebarWidth, setSidebarWidth] = useState(250);
-  const [isResizing, setIsResizing] = useState(false);
+  // const [isResizing, setIsResizing] = useState(false);
 
   const { isOpen } = useSidebar();
 
   const handleResize = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    setIsResizing(true);
+    // setIsResizing(true);
     const startX = e.clientX;
     const startWidth = sidebarWidth;
 
@@ -91,7 +91,7 @@ const Sidebar = () => {
     };
 
     const onMouseUp = () => {
-      setIsResizing(false);
+      // setIsResizing(false);
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseup", onMouseUp);
     };

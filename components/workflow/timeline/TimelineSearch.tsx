@@ -1,10 +1,7 @@
 "use client";
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { MagnifyingGlassIcon } from '@heroicons/react/16/solid';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { useDebouncedCallback } from 'use-debounce';
-import { SetStateAction } from 'react';
 import TimelineSearchResult from './TimelineSearchResult';
 
 export const timelineGroups = [
@@ -57,7 +54,7 @@ const TimelineSearch = ({
         <input
           type="text" 
           placeholder={placeholder}
-          className={`border-[1px] border-gray-300 px-8 py-2 rounded-md w-full h-fit outline-none text-ellipsis`}
+          className={`border-[1px] border-gray-300 px-8 py-2 rounded-md w-full h-fit outline-none text-ellipsis ${className}`}
           onChange={(e) => setSearchTerm(e.target.value)}
           onFocus={() => setSearchOpen && setSearchOpen(true)}
           onBlur={() => setSearchOpen && setSearchOpen(false)}

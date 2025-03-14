@@ -1,9 +1,6 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import Image from "next/image";
 import { timelineGroups } from "@/constants/constants";
 
 const MAX_SUGGESTIONS = 8;

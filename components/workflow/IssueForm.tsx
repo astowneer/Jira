@@ -8,7 +8,6 @@ import { X } from "lucide-react";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -104,7 +103,7 @@ const IssueForm = () => {
           className="bg-blue-500 rounded-sm hover:bg-blue-600"
           onClick={() =>
             {
-              toast.custom((t) => <IssueFormToast />)
+              toast.custom(() => <IssueFormToast />)
               toggleIssuesForm()
             }
           }

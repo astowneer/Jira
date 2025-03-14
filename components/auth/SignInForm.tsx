@@ -71,7 +71,7 @@ const SignInForm = () => {
             <SignUpButton provider="github" className="border-[1px] border-gray-300 py-2 bg-white hover:bg-gray-100 text-black w-full rounded-md" />
             <SignUpButton provider="discord" className="border-[1px] border-gray-300 py-2 bg-white hover:bg-gray-100 text-black w-full rounded-md" />
           </div>
-          <Link href="/sign-up" className="hover:underline text-blue-500 text-sm">Can't login? Try to sign up</Link>
+          <Link href="/sign-up" className="hover:underline text-blue-500 text-sm">Can&apos;t login? Try to sign up</Link>
         </div>
       </form>
     </Form>

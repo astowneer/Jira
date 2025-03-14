@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { CSSProperties, ReactNode } from 'react'
 import { TimelineStateConsumer } from '../timeline/TimelineStateContext'
 import CustomHeader from './CustomHeader'

@@ -19,7 +19,7 @@ import Link from "next/link"
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox"
-import { oAuthSignIn, signUp } from "@/lib/actions"
+import { signUp } from "@/lib/actions"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { Button } from "@/components/ui/button"
@@ -71,6 +71,7 @@ const SignUpForm = () => {
           render={({ field }) => (
             <FormItem className="relative">
               <FormLabel className="relative inline-block before:content-['*'] before:absolute before:-top-2 before:text-gray-700  before:text-xs">
+                {/* eslint-disable-next-line react/no-unescaped-entities */}
                 <span className="pl-2">First name</span>
               </FormLabel>
 

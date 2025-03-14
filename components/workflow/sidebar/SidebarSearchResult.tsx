@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { backlogIssuesInitial, sidebarExtraItems } from "@/constants/constants";
+import { sidebarExtraItems } from "@/constants/constants";
 
 const MAX_SUGGESTIONS = 8;
 

@@ -1,33 +1,3 @@
-// import Image from 'next/image'
-// import React from 'react'
-
-// const BacklogInfoTooltip = ({ count, canEdit = false, color, tooltipText, tooltipSide = 'top' }: { canEdit?: boolean, count: string, color: string, tooltipText: string, tooltipSide?: "top" | "bottom" }) => {
-//   const bgColor = "bg-red-200";
-
-//   if (canEdit) {
-//     return (
-//       <div>
-
-//       </div>
-//     )
-//   }
-
-//   return (
-//     <div className={`relative hover:bg-gray-200 px-2 w-fit flex justify-center items-center border-[1px] border-gray-400 rounded-sm group ${bgColor}`}>
-//       <div className={`
-//           absolute bg-black text-white text-[10px] px-2 py-1 hidden group-hover:block text-nowrap z-10
-//           ${tooltipSide === 'top' ? 'bottom-5' : 'top-5'}
-//         `}
-//       >
-//         {tooltipText}
-//       </div>
-//       <p className='text-[10px]'>{count}</p>
-//     </div>
-//   );
-// };
-
-// export default BacklogInfoTooltip;
-
 import Image from 'next/image';
 import React, { useState } from 'react';
 
@@ -93,7 +63,7 @@ const BacklogInfoTooltip = ({
               </button>
             </div>
           </div>
-          
+          <div className='hidden'>{color}</div>
         </div>
       ) : (
         <div

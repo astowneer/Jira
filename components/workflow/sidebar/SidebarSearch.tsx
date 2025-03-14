@@ -1,10 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { MagnifyingGlassIcon } from '@heroicons/react/16/solid';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { useDebouncedCallback } from 'use-debounce';
-import SidebarSearchResult from './SidebarSearchResult';
 import { SetStateAction } from 'react';
 
 interface SearchProps {

@@ -40,27 +40,14 @@ export const typesOfWorkLinks = [
   },
 ]
 
-const issues = [
-  {
-    title: "Story",
-    icon: "/svg/bookmark.svg",
-    filter: "invert(40%) sepia(90%) saturate(3000%) hue-rotate(100deg) brightness(90%) contrast(100%)",
-  },
-  {
-    title: "Bug",
-    icon: "/svg/bug.svg",
-    filter: "invert(20%) sepia(90%) saturate(5000%) hue-rotate(0deg) brightness(100%) contrast(90%)"
-  },
-]
-
 export default function Backlog() {
   const [open, isOpen] = useState(true)
-  const [addIssueDropdown, setAddIssueDropdown] = useState(true)
-  const [currentIssue, setCurrentIssue] = useState(issues[0])
-  const [issuesText, setIssueText] = useState("")
+  // const [addIssueDropdown, setAddIssueDropdown] = useState(true)
+  // const [currentIssue, setCurrentIssue] = useState(issues[0])
+  // const [issuesText, setIssueText] = useState("")
   const [backlogIssues, setBacklogIssues] = useState(backlogIssuesInitial);
   const [statusDropdownOpenIndex, setStatusDropdownOpenIndex] = useState(-1);
-  const [moreDropdownOpenIndex, setMoreDropdownOpenIndex] = useState(-1);
+  // const [moreDropdownOpenIndex, setMoreDropdownOpenIndex] = useState(-1);
 
   const [checkedIssues, setCheckedIssues] = useState<string[]>([]);
   
@@ -96,14 +83,14 @@ export default function Backlog() {
                       key={item.id} 
                       item={item} 
                       setBacklogIssues={setBacklogIssues} 
-                      setMoreDropdownOpenIndex={setMoreDropdownOpenIndex} 
+                      // setMoreDropdownOpenIndex={setMoreDropdownOpenIndex} 
                       index={index} 
                       statusDropdownOpenIndex={statusDropdownOpenIndex} 
                       setStatusDropdownOpenIndex={setStatusDropdownOpenIndex} 
-                      setCurrentIssue={setCurrentIssue} 
+                      // setCurrentIssue={setCurrentIssue} 
                       checkedIssues={checkedIssues} 
                       handleCheckboxChange={handleCheckboxChange} 
-                      moreDropdownOpenIndex={moreDropdownOpenIndex} 
+                      // moreDropdownOpenIndex={moreDropdownOpenIndex} 
                     />
                   )}
                 </div>
@@ -116,7 +103,7 @@ export default function Backlog() {
                     <p>
                       Drag issues from 
                       <span className="font-semibold">&nbsp;Backlog</span>&nbsp;section, or create new issues, to plan the work for this sprint. Select 
-                      <span className="font-semibold">&nbsp;Start sprint</span>&nbsp;when you're ready.
+                      <span className="font-semibold">&nbsp;Start sprint</span>&nbsp;when you&apos;re ready.
                     </p>
                   </div>
                 </div>

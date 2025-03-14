@@ -1,5 +1,4 @@
 import React from 'react'
-import { toast } from 'sonner';
 
 type Board = {
   title: string;
@@ -7,7 +6,6 @@ type Board = {
 }
 
 interface BoardContextMenuProps {
-  title: string,
   index: number,
   board: Board[],
   BoardContextMenuIndex: number,
@@ -17,7 +15,6 @@ interface BoardContextMenuProps {
 }
 
 const BoardContextMenu = ({
-  title,
   index,
   board,
   BoardContextMenuIndex,

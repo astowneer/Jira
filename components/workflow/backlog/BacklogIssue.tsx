@@ -6,7 +6,6 @@ import React from 'react'
 import { SetStateAction } from 'react';
 import BacklogDropdownStatus from './BacklogDropdownStatus';
 import useOutsideClick from '@/hooks/useOutsideClick';
-import BacklogDropdown from './BacklogDropdown';
 import { issuesStatusDropdownList } from '@/constants/constants';
 
 type BacklogIssues = {
@@ -23,28 +22,17 @@ type BacklogIssues = {
   }[];
 }
 
-type Issue = {
-  title: string;
-  icon: string;
-  filter: string;
-}
-
-
-type StatusDropdown = {
-  status: string;
-}
-
 interface BacklogIssueProps {
   index: number, 
   item: BacklogIssues;
   statusDropdownOpenIndex: number, 
   setStatusDropdownOpenIndex: React.Dispatch<SetStateAction<number>>, 
-  setCurrentIssue: React.Dispatch<SetStateAction<Issue>>,  
+  // setCurrentIssue: React.Dispatch<SetStateAction<Issue>>,  
   checkedIssues: string[], 
   handleCheckboxChange: (id: string) => void, 
   setBacklogIssues: React.Dispatch<SetStateAction<BacklogIssues[]>>, 
-  moreDropdownOpenIndex: number, 
-  setMoreDropdownOpenIndex: React.Dispatch<SetStateAction<number>> 
+  // moreDropdownOpenIndex: number, 
+  // setMoreDropdownOpenIndex: React.Dispatch<SetStateAction<number>> 
 }
 
 const BacklogIssue = ({ 
@@ -52,12 +40,12 @@ const BacklogIssue = ({
   index, 
   statusDropdownOpenIndex, 
   setStatusDropdownOpenIndex, 
-  setCurrentIssue, 
+  // setCurrentIssue, 
   checkedIssues, 
   handleCheckboxChange, 
   setBacklogIssues, 
-  moreDropdownOpenIndex, 
-  setMoreDropdownOpenIndex 
+  // moreDropdownOpenIndex, 
+  // setMoreDropdownOpenIndex 
 }: BacklogIssueProps) => {
   const handleChangeStatus = (value: string, index: number) => {
     setBacklogIssues((prev) => 
@@ -79,9 +67,9 @@ const BacklogIssue = ({
     setTimeout(() => setStatusDropdownOpenIndex(-1), 300)
   })
 
-  const dropdownMoreRef = useOutsideClick<HTMLButtonElement>(() => {
-    setTimeout(() => setMoreDropdownOpenIndex(-1), 300)
-  })
+  // const dropdownMoreRef = useOutsideClick<HTMLButtonElement>(() => {
+  //   setTimeout(() => setMoreDropdownOpenIndex(-1), 300)
+  // })
 
   return (
     <label 

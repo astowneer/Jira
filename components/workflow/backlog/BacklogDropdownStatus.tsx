@@ -1,14 +1,7 @@
 import React from 'react'
-import { SetStateAction } from 'react'
 
 type Status = {
   status: string;
-}
-
-type Issue = {
-  title: string;
-  icon: string;
-  filter: string;
 }
 
 interface BacklogDropdownStatusProps {

@@ -1,6 +1,5 @@
 "use client"
 
-import Search from '@/components/workflow/Search'
 import UserTooltip from '../UserTooltip'
 import ActionTooltip from '../ActionTooltip'
 import TimelineDropdown from './TimelineDropdown'

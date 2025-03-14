@@ -1,15 +1,11 @@
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 import Image from "next/image";
-import Search from "./Search";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { navigationLinks } from "@/constants/constants";
 import SignHeader from "../auth/SignHeader";
 

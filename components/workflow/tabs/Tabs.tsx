@@ -5,7 +5,6 @@ import Tab from "./Tab";
 import TabContextMenu from "./TabContextMenu";
 import { usePathname } from "next/navigation";
 import TabDefault from "./TabDefault";
-import Link from "next/link";
 // import { tabsLinks } from "@/constants/constants";
 
 export const tabsLinks = [

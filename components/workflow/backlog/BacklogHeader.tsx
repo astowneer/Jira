@@ -42,7 +42,20 @@ type BacklogIssues = {
 }
 
 
-const BacklogHeader = ({ backlogIssues, open, isOpen, handleRemove, checkedIssues, setCheckedIssues  }: { backlogIssues: BacklogIssues[], open: boolean, isOpen: React.Dispatch<SetStateAction<boolean>>, handleRemove: () => void, checkedIssues: string[], setCheckedIssues: React.Dispatch<SetStateAction<string[]>>}) => {
+const BacklogHeader = ({ 
+  backlogIssues, 
+  open, 
+  isOpen, 
+  handleRemove, 
+  checkedIssues, 
+  setCheckedIssues  
+}: {
+  backlogIssues: BacklogIssues[], 
+  open: boolean, 
+  isOpen: React.Dispatch<SetStateAction<boolean>>, 
+  handleRemove: () => void, checkedIssues: string[], 
+  setCheckedIssues: React.Dispatch<SetStateAction<string[]>>
+}) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useOutsideClick<HTMLButtonElement>(() => {
     setTimeout(() => setDropdownOpen(false), 300);
@@ -91,7 +104,7 @@ const BacklogHeader = ({ backlogIssues, open, isOpen, handleRemove, checkedIssue
           disabled={backlogIssues.length === 0} 
           className="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded-sm disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed"
           onClick={() =>
-            toast.custom((t) => (
+            toast.custom(() => (
               <SprintToast />
             ))
           }          
@@ -116,7 +129,7 @@ const BacklogHeader = ({ backlogIssues, open, isOpen, handleRemove, checkedIssue
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default BacklogHeader
+export default BacklogHeader;
