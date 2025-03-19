@@ -27,12 +27,9 @@ interface BacklogIssueProps {
   item: BacklogIssues;
   statusDropdownOpenIndex: number, 
   setStatusDropdownOpenIndex: React.Dispatch<SetStateAction<number>>, 
-  // setCurrentIssue: React.Dispatch<SetStateAction<Issue>>,  
   checkedIssues: string[], 
   handleCheckboxChange: (id: string) => void, 
   setBacklogIssues: React.Dispatch<SetStateAction<BacklogIssues[]>>, 
-  // moreDropdownOpenIndex: number, 
-  // setMoreDropdownOpenIndex: React.Dispatch<SetStateAction<number>> 
 }
 
 const BacklogIssue = ({ 
@@ -40,12 +37,9 @@ const BacklogIssue = ({
   index, 
   statusDropdownOpenIndex, 
   setStatusDropdownOpenIndex, 
-  // setCurrentIssue, 
   checkedIssues, 
   handleCheckboxChange, 
   setBacklogIssues, 
-  // moreDropdownOpenIndex, 
-  // setMoreDropdownOpenIndex 
 }: BacklogIssueProps) => {
   const handleChangeStatus = (value: string, index: number) => {
     setBacklogIssues((prev) => 
@@ -66,10 +60,6 @@ const BacklogIssue = ({
   const dropdownStatusRef = useOutsideClick<HTMLDivElement>(() => {
     setTimeout(() => setStatusDropdownOpenIndex(-1), 300)
   })
-
-  // const dropdownMoreRef = useOutsideClick<HTMLButtonElement>(() => {
-  //   setTimeout(() => setMoreDropdownOpenIndex(-1), 300)
-  // })
 
   return (
     <label 

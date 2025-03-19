@@ -6,6 +6,7 @@ import {
   CardHeader, 
   CardTitle 
 } from "@/components/ui/card"
+import { Suspense } from "react";
 
 export default function SignUp() {
   return (
@@ -17,7 +18,10 @@ export default function SignUp() {
           <CardTitle className="hidden">Sign Up</CardTitle>
         </CardHeader>
         <CardContent>
-          <SignUpForm />
+          {/* <SignUpForm /> */}
+          <Suspense fallback={<div>Loading...</div>}>
+            <SignUpForm />
+          </Suspense>
         </CardContent>
       </Card>
     </div>

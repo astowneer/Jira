@@ -74,12 +74,9 @@ const SIDEBAR_MAX_WIDTH = 400;
 
 const Sidebar = () => {
   const [sidebarWidth, setSidebarWidth] = useState(250);
-  // const [isResizing, setIsResizing] = useState(false);
-
   const { isOpen } = useSidebar();
 
   const handleResize = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    // setIsResizing(true);
     const startX = e.clientX;
     const startWidth = sidebarWidth;
 
@@ -91,7 +88,6 @@ const Sidebar = () => {
     };
 
     const onMouseUp = () => {
-      // setIsResizing(false);
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseup", onMouseUp);
     };
@@ -103,7 +99,7 @@ const Sidebar = () => {
   if (!isOpen) return null;
 
   return (
-    <aside className="flex sticky left-0 top-[48px] select-none bg-red-500 h-[calc(100vh-63px)]">
+    <aside className="flex sticky left-0 top-[48px] select-none h-[calc(100vh-48px)]">
       <nav
         style={{ width: sidebarWidth }}
         className="sticky left-0 top-[48px] flex flex-col bg-white border-r border-gray-200 pt-20 max-lg:hidden sm:p-4 xl:p-6"

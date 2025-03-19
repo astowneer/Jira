@@ -11,7 +11,6 @@ import { Dayjs } from 'dayjs'
   4. helpers for calculating left offset of items (and really...anything)
 */
 
-/* eslint-disable no-console */
 const defaultContextState: TimelineContextType = {
   getTimelineState: () => {
     console.warn('"getTimelineState" default func is being used')
@@ -29,7 +28,6 @@ const defaultContextState: TimelineContextType = {
     console.warn('"showPeriod" default func is being used')
   },
 }
-/* eslint-enable */
 
 export const TimelineContext = React.createContext<TimelineContextType>(defaultContextState)
 const { Consumer, Provider } = TimelineContext

@@ -1,14 +1,17 @@
 function addListener(component: {
-  _resizeEventListener?: (e: UIEvent) => void
-  resize: () => void
+  _resizeEventListener?: (e: UIEvent) => void;
+  resize: () => void;
 }) {
-  component._resizeEventListener = () => component.resize()
+  component._resizeEventListener = () => component.resize();
 
-  window.addEventListener('resize', component._resizeEventListener)
+  window.addEventListener('resize', component._resizeEventListener);
 }
 
 function removeListener(component: Record<string, any>) {
-  window.removeEventListener('resize', component._resizeEventListener!)
+  window.removeEventListener('resize', component._resizeEventListener!);
 }
 
-export default { addListener, removeListener }
+// Assign the object to a variable before exporting
+const resizeListener = { addListener, removeListener };
+
+export default resizeListener;

@@ -71,7 +71,6 @@ const SignUpForm = () => {
           render={({ field }) => (
             <FormItem className="relative">
               <FormLabel className="relative inline-block">
-                {/* eslint-disable-next-line react/no-unescaped-entities */}
                 <p>
                   First name
                   <span className="pl-1">*</span>
@@ -91,7 +90,6 @@ const SignUpForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="relative inline-block">
-                {/* <span className="pl-2">Last name</span> */}
                 <p>
                   Last name
                   <span className="pl-1">*</span>
@@ -110,7 +108,6 @@ const SignUpForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="relative inline-block">
-                {/* <span className="pl-2">Email</span> */}
                 <p>
                   Email
                   <span className="pl-1">*</span>
@@ -130,7 +127,6 @@ const SignUpForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="relative inline-block">
-                {/* <span className="pl-2">Password</span> */}
                 <p>
                   Password
                   <span className="pl-1">*</span>
@@ -162,7 +158,6 @@ const SignUpForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="relative inline-block">
-                {/* <span className="pl-2">Confirm Password</span> */}
                 <p>
                   Confirm Password
                   <span className="pl-1">*</span>
@@ -194,7 +189,6 @@ const SignUpForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="relative inline-block">
-                {/* <span className="pl-2">Secret Question</span> */}
                 <p>
                   Secret Question
                   <span className="pl-1">*</span>

@@ -72,7 +72,11 @@ const SidebarItemsWithDropdown = ({
         className="p-2 flex justify-between bg-white hover:bg-gray-200 cursor-pointer" 
         onClick={handleDropdownToggle} 
       >
-        <SidebarContextMenuAction item={{ icon, title }} />
+        <div className='flex items-center gap-2'>
+          <Image src={icon} width={18} height={18} alt={title} />
+          <span className='text-nowrap truncate flex-1 text-left'>{title}</span>
+        </div>
+
         <div className="flex gap-2">
           {add && (
             <button 
@@ -103,7 +107,7 @@ const SidebarItemsWithDropdown = ({
         </div>
       </li>
 
-      {dropdownOpen && 
+      {dropdownOpen && (
         <div className="pl-5 flex flex-col gap-2">
           {sidebarDropdown.map((item) => <SidebarDropdownItem key={item.itemTitle} item={item} />)}
           {title === 'Projects' && (
@@ -113,7 +117,7 @@ const SidebarItemsWithDropdown = ({
             </Link> 
           )}
         </div>
-      }
+      )}
     </>
   );
 };

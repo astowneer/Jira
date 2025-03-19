@@ -1,7 +1,7 @@
 import { getOAuthClient } from "@/app/auth/core/oauth/base";
 import { createUserSession } from "@/app/auth/core/session";
 import { db } from "@/app/drizzle/db";
-import {  OAuthProvider, oAuthProviders, UserOAuthAccountTable, UserTable } from "@/app/drizzle/schema";
+import { OAuthProvider, oAuthProviders, UserOAuthAccountTable, UserTable } from "@/app/drizzle/schema";
 import { eq } from "drizzle-orm";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";

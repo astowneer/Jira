@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import useOutsideClick from '@/hooks/useOutsideClick';
-import SidebarContextMenuAction from './SidebarContextMenuAction';
 import SidebarContextMenu from './SidebarContextMenu';
 
 const SidebarDropdownItem = ({ item }: SidebarDropdownProps) => {
@@ -24,10 +23,8 @@ const SidebarDropdownItem = ({ item }: SidebarDropdownProps) => {
       <p className='text-sm text-gray-500'>{item.mainTitle}</p>
 
       <Link href={item.itemRef} className='flex items-center gap-2 w-full hover:bg-gray-200 pr-2'>
-        <SidebarContextMenuAction 
-          item={{ icon: item.itemIcon, title: item.itemTitle, size: 16 }} 
-          className='gap-1 p-2 w-full min-w-0' 
-        />
+        <Image src={item.itemIcon} width={16} height={16} alt={item.itemTitle} />
+        <span className='text-nowrap truncate flex-1 text-left gap-1 p-2 w-full min-w-0'>{item.itemTitle}</span>
 
         {item.submenu && (
           <button className='hover:bg-gray-300 p-2' onClick={(e) => handleSeeMore(e)}>

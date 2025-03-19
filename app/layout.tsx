@@ -7,24 +7,21 @@ export const metadata: Metadata = {
   description: "Task manager",
 };
 
-export default function RootLayout({
-  children,
-  modal
-}: Readonly<{
-  children: React.ReactNode;
-  modal: React.ReactNode
-}>) {
+// const RootLayout = ({ children, modal }: { children: React.ReactNode; modal: React.ReactNode }) => {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body>
         {children}
-
+{/* 
         <div className="relative">
           {modal}
-        </div>
-        
+        </div> */}
+
         <Toaster />
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

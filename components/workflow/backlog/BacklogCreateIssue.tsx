@@ -50,7 +50,7 @@ const BacklogCreateIssue = ({  setBacklogIssues }: { setBacklogIssues: React.Dis
         storyPoints: "0", 
         assignedTo: [
           {
-            fullName: "undefined",
+            fullName: "Unasigned",
             color: "yellow"
           }
         ], 

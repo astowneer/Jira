@@ -3,7 +3,6 @@ import { noop } from '../utility/generic'
 
 const defaultContextState = {
   registerScroll: () => {
-    // eslint-disable-next-line
     console.warn('default registerScroll header used')
     return noop
   },
@@ -18,7 +17,6 @@ export type TimelineHeadersProviderProps = {
   children: ReactNode
   rightSidebarWidth?: number
   leftSidebarWidth: number
-  //TODO: maybe this should be skipped?
   timeSteps: object
   registerScroll: (e: HTMLDivElement) => void
 }

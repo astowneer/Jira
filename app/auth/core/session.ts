@@ -1,7 +1,12 @@
+export const runtime = "nodejs"
+
 import { userRoles } from "@/app/drizzle/schema"
 import { z } from "zod"
-import crypto from "crypto"
+// import crypto from "crypto"
 import { redisClient } from "@/app/redis/redis"
+
+import crypto from "crypto"
+// const crypto = require('crypto');
 
 const COOKIE_SESSION_KEY = "session-id"
 // seven days in seconds

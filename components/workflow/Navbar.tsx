@@ -10,7 +10,6 @@ import { Plus } from "lucide-react"
 import { useState, useEffect } from "react";
 import { getCurrentUser } from "@/lib/currentUser"
 import { useSidebar } from "./sidebar/SidebarContext"
-// import { navbarItems } from "@/constants/constants"
 import Notifications from "./Notifications"
 
 const Navbar = () => {
@@ -42,7 +41,7 @@ const Navbar = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <header className="sticky top-0 flex justify-between gap-3 max-md:gap-1 h-[63px] px-5 border-b-2 bg-white z-50">
+    <header className="flex justify-between gap-3 max-md:gap-1 px-5 border-b-2 bg-white ">
       <section className="flex gap-3 max-md:gap-1 items-center">
         <button className="hover:bg-gray-200/70 px-3 py-3 duration-300 cursor-pointer max-lg:hidden" onClick={toggleSidebar}>
           <Image src="/svg/burger.svg" width={18} height={18} alt="burger" />

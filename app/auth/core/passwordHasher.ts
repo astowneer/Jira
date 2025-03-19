@@ -1,4 +1,6 @@
+export const runtime = "nodejs"
 import crypto from "crypto"
+// const crypto = require('crypto');
 
 export const hashPassword = (password: string, salt: string): Promise<string> => {
   return new Promise((resolve, reject) => {

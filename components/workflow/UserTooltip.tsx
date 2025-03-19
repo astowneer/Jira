@@ -14,6 +14,7 @@ const UserTooltip = ({ user, size = 22, borderSize = 8, isDefault, className }: 
       <p className="absolute rounded-sm w-fit top-9 text-[10px] text-white whitespace-nowrap p-1 bg-neutral-800 hidden group-hover:block">
         {isDefault ? 'Unassigned' : user?.fullName}
       </p>
+      <p className='hidden'>{borderSize}</p>
     </section>
   );
 };

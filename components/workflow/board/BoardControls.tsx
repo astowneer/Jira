@@ -11,7 +11,6 @@ const BoardControls = ({ users }: { users: UserTooltip[] }) => {
   return (
     <article className="flex justify-between items-center gap-3 py-5">
       <section className="flex items-center gap-3 flex-1 w-full">
-        <h4>Your team members:</h4>
 
         <div className="flex">
           {users.map((user, index) => 

@@ -109,11 +109,17 @@ export interface ItemRendererProps<CustomItem extends TimelineItemBase<number>> 
   getItemProps: (params: GetItemPropsParams) => HTMLAttributes<HTMLDivElement> & { key:string, ref:LegacyRef<HTMLDivElement> }
   getResizeProps: GetResizeProps
 }
+// type GetResizePropsDirection = {
+//   ref: LegacyRef<HTMLDivElement>
+//   className: string
+//   style: CSSProperties
+// }
 type GetResizePropsDirection = {
-  ref: LegacyRef<HTMLDivElement>
-  className: string
-  style: CSSProperties
-}
+  ref: LegacyRef<HTMLDivElement> | ((el: HTMLDivElement) => void); // Adjust to expect HTMLDivElement
+  className: string;
+  style: React.CSSProperties;
+};
+
 export type GetResizeProps = (params?: GetItemPropsParams) => {
   right: GetResizePropsDirection
   left: GetResizePropsDirection

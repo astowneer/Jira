@@ -23,7 +23,6 @@ export const createMarkerStylesWithLeftOffset = (leftOffset: number) => ({
 })
 
 export const createDefaultRenderer = (dataTestidValue: string | undefined) => {
-  // eslint-disable-next-line
   return function DefaultMarkerRenderer({
     styles,
   }: {
