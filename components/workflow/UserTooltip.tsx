@@ -9,7 +9,7 @@ const UserTooltip = ({ user, size = 22, borderSize = 8, isDefault, className }: 
     : `outline outline-white outline-[3px]`;
 
   return (
-    <section className={`relative size-${borderSize} rounded-full flex justify-center items-center ${outlineClass} -mr-1 group ${userColorClass} ${className} hover:z-50`}>
+    <section className={`relative size-8 rounded-full flex justify-center items-center ${outlineClass} -mr-1 group ${userColorClass} ${className} hover:z-50`}>
       <Image src='/svg/user-bold.svg' width={size} height={size} alt='user' className={userColorIcon} />
       <p className="absolute rounded-sm w-fit top-9 text-[10px] text-white whitespace-nowrap p-1 bg-neutral-800 hidden group-hover:block">
         {isDefault ? 'Unassigned' : user?.fullName}

@@ -70,9 +70,12 @@ const SignUpForm = () => {
           name="firstName"
           render={({ field }) => (
             <FormItem className="relative">
-              <FormLabel className="relative inline-block before:content-['*'] before:absolute before:-top-2 before:text-gray-700  before:text-xs">
+              <FormLabel className="relative inline-block">
                 {/* eslint-disable-next-line react/no-unescaped-entities */}
-                <span className="pl-2">First name</span>
+                <p>
+                  First name
+                  <span className="pl-1">*</span>
+                </p>
               </FormLabel>
 
               <FormControl>
@@ -87,8 +90,12 @@ const SignUpForm = () => {
           name="lastName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="relative inline-block before:content-['*'] before:absolute before:-top-2 before:text-gray-700  before:text-xs">
-                <span className="pl-2">Last name</span>
+              <FormLabel className="relative inline-block">
+                {/* <span className="pl-2">Last name</span> */}
+                <p>
+                  Last name
+                  <span className="pl-1">*</span>
+                </p>
               </FormLabel>
               <FormControl>
                 <Input type="text" {...field} />
@@ -102,8 +109,12 @@ const SignUpForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="relative inline-block before:content-['*'] before:absolute before:-top-2 before:text-gray-700  before:text-xs">
-                <span className="pl-2">Email</span>
+              <FormLabel className="relative inline-block">
+                {/* <span className="pl-2">Email</span> */}
+                <p>
+                  Email
+                  <span className="pl-1">*</span>
+                </p>
               </FormLabel>
 
               <FormControl>
@@ -118,8 +129,12 @@ const SignUpForm = () => {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="relative inline-block before:content-['*'] before:absolute before:-top-2 before:text-gray-700  before:text-xs">
-                <span className="pl-2">Password</span>
+              <FormLabel className="relative inline-block">
+                {/* <span className="pl-2">Password</span> */}
+                <p>
+                  Password
+                  <span className="pl-1">*</span>
+                </p>
               </FormLabel>
 
               <div className="relative">
@@ -146,8 +161,12 @@ const SignUpForm = () => {
           name="confirmPassword"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="relative inline-block before:content-['*'] before:absolute before:-top-2 before:text-gray-700  before:text-xs">
-                <span className="pl-2">Confirm Password</span>
+              <FormLabel className="relative inline-block">
+                {/* <span className="pl-2">Confirm Password</span> */}
+                <p>
+                  Confirm Password
+                  <span className="pl-1">*</span>
+                </p>
               </FormLabel>
 
               <div className="relative">
@@ -174,8 +193,12 @@ const SignUpForm = () => {
           name="secretQuestion"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="relative inline-block before:content-['*'] before:absolute before:-top-2 before:text-gray-700  before:text-xs">
-                <span className="pl-2">Secret Question</span>
+              <FormLabel className="relative inline-block">
+                {/* <span className="pl-2">Secret Question</span> */}
+                <p>
+                  Secret Question
+                  <span className="pl-1">*</span>
+                </p>
               </FormLabel>
               <Select
                 onValueChange={(value) => {
